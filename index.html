@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>비하이브코퍼레이션 · 견적/CRM 툴 리서치 — 2026-08-13</title>
+<title>비하이브 · 견적서 프로그램 추천 — 2026-08-13</title>
 <style>
   :root{
-    --navy:#0a1628; --navy-2:#101f34; --ink:#152031; --muted:#657386;
+    --navy:#0a1628; --ink:#152031; --muted:#657386;
     --line:#dce3e5; --paper:#f4f6f3; --white:#fff;
     --mint:#5ce1b9; --mint-dark:#0d8d6b; --amber:#f2b84b; --danger:#c53f3f;
     --gold:#c9a45c;
@@ -15,510 +15,359 @@
   html{scroll-behavior:smooth}
   body{background:var(--paper);color:var(--ink);
     font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased;line-height:1.6;word-break:keep-all}
+    -webkit-font-smoothing:antialiased;line-height:1.75;word-break:keep-all;font-size:16px}
   a{color:var(--mint-dark);text-decoration:none;font-weight:600}
   a:hover{text-decoration:underline}
-  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#e2e8e5;color:#0e6f58;padding:1px 5px;font-size:.88em}
 
-  header.top{background:var(--navy);color:#fff;padding:52px max(28px,50vw - 540px) 46px}
-  header.top .eyebrow{color:var(--mint);letter-spacing:.1em;font-family:ui-monospace,monospace;font-size:11px;font-weight:800;margin-bottom:14px;text-transform:uppercase}
-  header.top h1{font-size:clamp(32px,4.5vw,52px);letter-spacing:-.03em;line-height:1.15;margin-bottom:16px}
-  header.top h1 em{color:var(--mint);font-style:normal}
-  header.top .meta{color:#8ca0b6;font-size:13px;display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:ui-monospace,monospace}
+  header.top{background:var(--navy);color:#fff;padding:56px max(28px,50vw - 500px)}
+  header.top .eyebrow{color:var(--mint);letter-spacing:.08em;font-size:12px;font-weight:800;margin-bottom:14px}
+  header.top h1{font-size:clamp(30px,4.5vw,44px);letter-spacing:-.02em;line-height:1.2;margin-bottom:14px}
+  header.top p{color:#c8d5e2;font-size:16px;max-width:640px;line-height:1.75}
+  header.top .meta{color:#8ca0b6;font-size:13px;display:flex;gap:22px;flex-wrap:wrap;margin-top:22px}
   header.top .meta b{color:#e2eaf1;font-weight:600}
 
-  main{max-width:1080px;margin:0 auto;padding:70px 28px 100px}
-  section{margin-bottom:78px}
-  h2{font-size:26px;letter-spacing:-.02em;margin-bottom:22px;padding-bottom:10px;border-bottom:2px solid var(--navy)}
-  h3{font-size:18px;letter-spacing:-.015em;margin:26px 0 10px}
-  p{color:#3a4655;margin-bottom:12px;font-size:15px}
-  ul,ol{padding-left:22px;color:#3a4655}
-  li{font-size:14.5px;margin-bottom:6px}
+  main{max-width:960px;margin:0 auto;padding:60px 28px 90px}
+  section{margin-bottom:70px}
+  h2{font-size:26px;letter-spacing:-.02em;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--navy)}
+  h2 small{display:block;color:var(--muted);font-size:14px;font-weight:400;margin-top:6px}
+  h3{font-size:19px;letter-spacing:-.015em;margin:22px 0 10px}
+  p{color:#3a4655;margin-bottom:14px}
+  ul,ol{padding-left:24px;color:#3a4655;margin-bottom:14px}
+  li{margin-bottom:8px}
 
-  .lede{font-size:16px;color:var(--muted);line-height:1.75;border-left:3px solid var(--mint);padding:6px 0 6px 18px;margin-bottom:38px}
-  .lede b{color:var(--ink)}
+  .lede{font-size:16px;color:var(--ink);line-height:1.85;background:#fff;border-left:4px solid var(--mint);padding:20px 24px;margin-bottom:34px}
+  .lede b{color:var(--navy)}
 
-  .req-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
-  .req-grid > div{background:#fff;padding:22px}
-  .req-grid h4{font-size:12px;color:var(--mint-dark);letter-spacing:.08em;text-transform:uppercase;font-family:ui-monospace,monospace;margin-bottom:12px}
-  .req-grid ul{list-style:none;padding-left:0}
-  .req-grid li{padding:8px 0;border-top:1px solid #eef1ef;font-size:13.5px;display:flex;gap:10px;align-items:flex-start}
-  .req-grid li:first-child{border-top:0}
-  .req-grid li::before{content:"";width:6px;height:6px;background:var(--mint-dark);border-radius:50%;flex-shrink:0;margin-top:8px}
+  /* 필요한 기능 */
+  .need{background:#fff;border:1px solid var(--line);padding:26px 30px}
+  .need ol{list-style:none;padding-left:0;counter-reset:need-counter}
+  .need li{counter-increment:need-counter;padding:10px 0;border-top:1px solid #eef1ef;font-size:15px;display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+  .need li:first-child{border-top:0}
+  .need li::before{content:counter(need-counter);background:var(--navy);color:#fff;font-weight:800;text-align:center;line-height:26px;font-size:12px;border-radius:50%;width:26px;height:26px;margin-top:3px}
+  .need li small{display:block;color:var(--muted);font-size:13px;margin-top:4px;line-height:1.6}
 
-  .legend{background:#fff;border:1px solid var(--line);padding:16px 20px;margin-bottom:18px;font-size:13px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
-  .legend b{font-family:ui-monospace,monospace;font-weight:800;padding:2px 8px;font-size:11px}
-  .legend .l1{background:#d5f5ea;color:var(--mint-dark)}
-  .legend .l2{background:#fef0d3;color:#8a651f}
+  /* 프로그램 카드 */
+  .card-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:#fff;border:1px solid var(--line);padding:22px 24px}
+  .card.top{border-top:4px solid var(--gold);background:#fdfaf1}
+  .card .logo-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+  .card h3{margin:0;font-size:18px}
+  .card .price{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:var(--mint-dark);font-weight:800}
+  .card .price.warn{color:#c68a10}
+  .card .desc{font-size:14px;color:#3a4655;margin-bottom:12px;line-height:1.7}
+  .card .pros{font-size:13px;color:var(--mint-dark);margin-bottom:6px}
+  .card .cons{font-size:13px;color:#8a651f}
+  .card .pros b, .card .cons b{font-family:ui-monospace,monospace;font-size:10px;font-weight:800;margin-right:6px;padding:1px 6px}
+  .card .pros b{background:#d5f5ea;color:var(--mint-dark)}
+  .card .cons b{background:#fef0d3;color:#8a651f}
 
-  table.compare{width:100%;border-collapse:collapse;background:#fff;font-size:13px}
-  table.compare th, table.compare td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}
-  table.compare thead th{background:var(--navy);color:#fff;font-weight:700;font-size:12px;letter-spacing:.02em}
-  table.compare thead th small{display:block;font-weight:400;color:#8ca0b6;font-size:10px;margin-top:3px;font-family:ui-monospace,monospace}
-  table.compare tbody th{background:#eef2ef;font-weight:700;color:var(--ink);font-size:12.5px;width:200px}
-  table.compare .ok{color:var(--mint-dark);font-weight:700}
-  table.compare .warn{color:#c68a10;font-weight:700}
-  table.compare .no{color:var(--danger);font-weight:700}
-  table.compare .num{font-family:ui-monospace,monospace;font-weight:700}
-  table.compare .highlight{background:#fef4e1}
-  .conf{display:inline-block;font-family:ui-monospace,monospace;font-size:9px;font-weight:800;padding:1px 5px;margin-left:5px;vertical-align:middle}
-  .conf.c1{background:#d5f5ea;color:var(--mint-dark)}
-  .conf.c2{background:#fef0d3;color:#8a651f}
-
-  .best{background:linear-gradient(135deg, var(--navy) 0%, #1a3050 100%);color:#fff;padding:44px 48px;margin:34px 0;position:relative;overflow:hidden}
+  /* BEST 박스 */
+  .best{background:linear-gradient(135deg, var(--navy) 0%, #1a3050 100%);color:#fff;padding:44px 48px;margin:24px 0;position:relative;overflow:hidden}
   .best::before{content:"";position:absolute;top:0;left:0;width:6px;height:100%;background:var(--gold)}
-  .best .crown{color:var(--gold);letter-spacing:.15em;font-family:ui-monospace,monospace;font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:16px}
-  .best h3{color:#fff;font-size:28px;margin-bottom:8px;letter-spacing:-.02em}
-  .best .price{color:var(--gold);font-family:ui-monospace,monospace;font-size:16px;font-weight:800;margin-bottom:20px}
-  .best p{color:#c8d5e2;font-size:14.5px;margin-bottom:12px}
-  .best strong{color:var(--gold)}
-  .best .reasons{margin-top:22px;padding-top:22px;border-top:1px solid #2c4056}
-  .best .reasons ul{list-style:none;padding-left:0}
-  .best .reasons li{color:#c8d5e2;padding:8px 0;font-size:14px;display:flex;gap:14px;align-items:flex-start}
-  .best .reasons li b{color:var(--gold);font-family:ui-monospace,monospace;font-size:11px;font-weight:800;flex-shrink:0;padding:2px 8px;background:rgba(201,164,92,.15);height:fit-content;margin-top:2px}
-  .best .risks{margin-top:22px;padding:18px 22px;background:rgba(242,184,75,.12);border-left:3px solid var(--amber)}
-  .best .risks h4{color:var(--amber);font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
-  .best .risks li{color:#e0d0a5;font-size:13px;padding:4px 0}
+  .best .crown{color:var(--gold);letter-spacing:.12em;font-size:13px;font-weight:800;text-transform:uppercase;margin-bottom:16px}
+  .best h3{color:#fff;font-size:30px;margin-bottom:6px;letter-spacing:-.02em}
+  .best .price-tag{color:var(--gold);font-family:ui-monospace,monospace;font-size:16px;font-weight:800;margin-bottom:24px}
+  .best > p{color:#c8d5e2;font-size:15px;margin-bottom:14px;line-height:1.8}
+  .best > p strong{color:var(--gold)}
 
-  .runner{background:#fff;border:1px solid var(--line);padding:28px 32px;margin-top:22px}
-  .runner .rank{color:var(--muted);font-family:ui-monospace,monospace;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
-  .runner h3{margin-bottom:4px}
-  .runner .price{font-family:ui-monospace,monospace;font-size:13px;color:var(--mint-dark);font-weight:800;margin-bottom:14px}
-  .runner p{font-size:14px;margin-bottom:10px}
-  .runner .why{font-size:13px;color:var(--muted)}
+  .reasons{margin-top:22px;padding-top:24px;border-top:1px solid #2c4056}
+  .reasons > h4{color:var(--gold);letter-spacing:.08em;font-size:12px;text-transform:uppercase;margin-bottom:14px}
+  .reasons ol{list-style:none;padding-left:0;counter-reset:rc}
+  .reasons li{counter-increment:rc;color:#dbe4ea;padding:10px 0;font-size:14.5px;display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;line-height:1.7}
+  .reasons li::before{content:counter(rc);background:var(--gold);color:var(--navy);font-weight:900;text-align:center;line-height:24px;font-size:12px;border-radius:50%;width:24px;height:24px;margin-top:4px}
+  .reasons li b{color:#fff}
 
-  .bundle-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
-  .bundle-grid article{background:#fff;border:1px solid var(--line);padding:24px}
-  .bundle-grid article.rec{border-top:3px solid var(--gold);background:#fdfaf1}
-  .bundle-grid .b-tag{color:var(--muted);font-family:ui-monospace,monospace;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
-  .bundle-grid article.rec .b-tag{color:var(--gold)}
-  .bundle-grid h3{font-size:17px;margin:0 0 6px}
-  .bundle-grid .b-price{font-family:ui-monospace,monospace;font-weight:800;font-size:14px;color:var(--mint-dark);margin-bottom:14px}
-  .bundle-grid .b-pros, .bundle-grid .b-cons{font-size:12.5px;color:#3a4655;margin-top:10px}
-  .bundle-grid .b-pros b, .bundle-grid .b-cons b{font-family:ui-monospace,monospace;font-size:10px;font-weight:800;padding:1px 6px;margin-right:6px}
-  .bundle-grid .b-pros b{background:#d5f5ea;color:var(--mint-dark)}
-  .bundle-grid .b-cons b{background:#f3e0e0;color:#872020}
+  .worries{margin-top:24px;padding:18px 22px;background:rgba(242,184,75,.12);border-left:3px solid var(--amber)}
+  .worries h4{color:var(--amber);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+  .worries ul{list-style:none;padding-left:0;color:#e0d0a5}
+  .worries li{padding:6px 0;font-size:13.5px;line-height:1.65}
+  .worries li b{color:#fff}
 
+  /* 다른 선택지 */
+  .alt{background:#fff;border:1px solid var(--line);padding:26px 30px;margin-top:16px}
+  .alt .tag{color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+  .alt h3{margin:0 0 4px;font-size:20px}
+  .alt .price-tag{font-family:ui-monospace,monospace;font-size:13px;color:var(--mint-dark);font-weight:800;margin-bottom:12px}
+  .alt p{font-size:14.5px;line-height:1.75;margin-bottom:8px}
+
+  /* 진행 방법 */
   .steps{background:#fff;border:1px solid var(--line);padding:0}
-  .steps > div{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;padding:18px 24px;border-top:1px solid var(--line)}
+  .steps > div{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:18px 24px;border-top:1px solid var(--line)}
   .steps > div:first-child{border-top:0}
-  .steps .num{font-family:ui-monospace,monospace;color:var(--mint-dark);font-weight:900;font-size:20px}
-  .steps .task{font-size:14px}
-  .steps .who{font-size:11px;color:var(--muted);font-family:ui-monospace,monospace;text-align:right}
+  .steps .num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mint-dark);font-weight:900;font-size:22px}
+  .steps .task{font-size:14.5px;line-height:1.7}
+  .steps .task b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+  .steps .task small{color:var(--muted);font-size:13px;display:block;margin-top:4px}
 
-  .sources{background:#fff;border:1px solid var(--line);padding:26px 28px}
-  .sources h4{font-size:13px;color:var(--mint-dark);text-transform:uppercase;font-family:ui-monospace,monospace;letter-spacing:.08em;margin-bottom:12px;margin-top:20px}
-  .sources h4:first-child{margin-top:0}
-  .sources ul{list-style:none;padding-left:0}
-  .sources li{padding:6px 0;font-size:12.5px}
-  .sources li b{color:var(--ink)}
+  /* 용어 사전 */
+  .glossary{background:#e9ede9;padding:24px 28px;margin-top:20px}
+  .glossary h3{margin:0 0 10px;font-size:16px;color:var(--navy)}
+  .glossary dl{display:grid;grid-template-columns:120px 1fr;gap:6px 18px;font-size:13.5px}
+  .glossary dt{font-weight:800;color:var(--navy)}
+  .glossary dd{color:#5a6674;margin:0}
 
-  footer{background:var(--navy);color:#8ba0b6;padding:26px max(28px,50vw - 540px);font-size:12px;font-family:ui-monospace,monospace}
-  footer a{color:var(--mint)}
+  footer{background:var(--navy);color:#8ba0b6;padding:26px max(28px,50vw - 500px);font-size:12px}
 
   @media (max-width:720px){
-    .req-grid, .bundle-grid{grid-template-columns:1fr}
-    .legend{gap:12px}
-    table.compare{font-size:12px}
-    table.compare th, table.compare td{padding:8px 8px}
-    .steps > div{grid-template-columns:1fr;gap:6px}
-    .steps .who{text-align:left}
+    .card-list{grid-template-columns:1fr}
     .best{padding:32px 24px}
     .best h3{font-size:22px}
+    .steps > div, .reasons li{grid-template-columns:36px 1fr}
+    .glossary dl{grid-template-columns:1fr;gap:2px 0}
+    .glossary dd{margin-bottom:8px}
   }
 </style>
 </head>
 <body>
 
 <header class="top">
-  <div class="eyebrow">Research Report · 2026-08-13</div>
-  <h1>견적/CRM 툴 <em>리서치</em></h1>
-  <p style="color:#c8d5e2;font-size:15.5px;max-width:640px">비하이브코퍼레이션 · 통번역 실무 견적 워크플로에 맞는 SaaS 툴 리서치.<br/>실제 견적서 · 요율표 · 5년치 Workpad 데이터를 근거로 요구사항 도출.</p>
+  <div class="eyebrow">언니에게 드리는 리서치 · 2026-08-13</div>
+  <h1>어떤 프로그램을 쓰면 좋을까?</h1>
+  <p>견적서 자동으로 만들고 · 고객 정보 정리하고 · 인보이스도 보낼 수 있는 프로그램을 여러 개 찾아봤어요.<br/>어떤 게 언니 회사에 제일 맞는지 정리했습니다.</p>
   <div class="meta">
-    <span><b>대상</b> 언니 · 팀원 1명 (2 seats)</span>
-    <span><b>예산</b> 월 ₩100,000 상한 (~$70)</span>
-    <span><b>규모</b> 100건/년 · 몇십 개 반복 고객</span>
+    <span><b>대상</b> 언니 · 팀원 1명 (2명)</span>
+    <span><b>예산</b> 매달 10만 원 안</span>
+    <span><b>일 규모</b> 1년에 100건쯤 · 자주 오는 고객 몇십 명</span>
   </div>
 </header>
 
 <main>
 
 <p class="lede">
-  이 리서치는 언니의 실제 견적서(Korea Risk Group·KCA 웨비나 2건)·2026 요율표·2020~2025 Workpad 를 파싱한 결과에서 요구사항을 뽑고, 개별 툴 6개 + 조합안 4개를 비교한 결과입니다.
-  개별 툴만 보는 것보다 <b>CRM+견적 조합안 (Bundle)</b> 관점이 실제 도입 의사결정에 훨씬 정확합니다.
+  이 문서 읽는 순서: <b>① 언니한테 뭐가 필요한지 정리</b> → <b>② 프로그램 6개 짧게 소개</b> → <b>③ 그 중에 제일 좋은 건 뭔지 추천</b> → <b>④ 그럼 다음에 뭐 하면 되는지</b>.<br/>
+  결론부터 말씀드리면 <b>Bonsai (본사이)</b> 라는 프로그램이 언니 회사에 제일 잘 맞을 것 같아요. 이유는 뒤에 자세히 써뒀어요.
 </p>
 
-<!-- ─────────────────────────── SECTION 1 ─────────────────────────── -->
+<!-- ─────────────────────────── 1. 필요한 것 ─────────────────────────── -->
 <section>
-  <h2>1 · 요구사항 (실 데이터 기반)</h2>
+  <h2>1 · 언니한테 필요한 게 뭐예요?<small>지금 쓰시는 엑셀 견적서 · 요율표 · 5년치 정리를 보고 뽑았어요</small></h2>
 
-  <div class="req-grid">
-    <div>
-      <h4>필수 (Must-have)</h4>
-      <ul>
-        <li>라인아이템 pricing table (4~10행) — 실제 견적 라인 수</li>
-        <li>소계 + VAT 10% + 총계 자동 계산 · <b>천단위 절사</b> 대응</li>
-        <li>다중 통화 (KRW + USD) · 환율 필드</li>
-        <li>PDF export (A4)</li>
-        <li>한글 폰트 임베드 (Pretendard/Noto Sans KR)</li>
-        <li>회사 로고 · 계좌 정보 (하나은행) 삽입</li>
-      </ul>
-    </div>
-    <div>
-      <h4>있으면 좋음 (Nice-to-have)</h4>
-      <ul>
-        <li>Variables/Tokens — 요율 프리셋 (통역 A~E · 번역 a~d · 기타 I~III)</li>
-        <li>취소수수료 4-tier 자동 (2주전 30% → 당일 100%)</li>
-        <li>클라이언트 마스터 재사용 (반복 클라이언트)</li>
-        <li>이중언어 (영문 견적 · 외국 클라이언트 대응)</li>
-        <li>결제 완료 트래킹 · 미수금 알림</li>
-        <li>Workpad 800+건 CSV / Excel import — 필수 아님, 별도 정리 대안 가능</li>
-        <li>하나은행 clobe.ai 병행 사용 가능</li>
-      </ul>
-    </div>
+  <div class="need">
+    <ol>
+      <li><b>견적서를 자동으로 예쁘게 만들기</b><small>클라이언트 이름, 업무 내용, 금액 넣으면 알아서 서식 맞춰서 PDF 나오게</small></li>
+      <li><b>같은 요율표를 매번 안 쳐도 되게</b><small>통역 A, B, C · 번역 a, b · 출장 요율... 이런 걸 미리 저장해두고 클릭 한 번으로 넣기</small></li>
+      <li><b>부가세 10%, 소계, 총계 자동 계산</b><small>천 단위 절사도 알아서 해주면 좋아요</small></li>
+      <li><b>한글로 예쁘게 나오기</b><small>깨진 글씨 없이 · 명조체나 세리프 폰트가 그대로 나오게</small></li>
+      <li><b>한국 원화(₩)와 미국 달러($) 둘 다 되기</b><small>외국 클라이언트(Korea Risk Group 같은) 견적도 자주 발행하시니까</small></li>
+      <li><b>회사 로고 · 하나은행 계좌 정보가 견적서에 자동으로 들어가기</b><small>매번 손으로 안 쳐도 되게</small></li>
+      <li><b>고객 정보 정리</b><small>식약처, 화장품협회, 브레인파크... 자주 오는 고객 목록 관리</small></li>
+      <li><b>있으면 좋은 것</b><small>계약서 서명 온라인으로 받기 · 인보이스 자동 발행 · 결제 완료 확인</small></li>
+    </ol>
   </div>
 
-  <h3>워크플로 요약 (10 스텝)</h3>
-  <p style="font-size:14px;color:var(--muted)">
-    ① 문의 → ② 최초 견적 → ③ 고객사 검토 (2~3업체 비교) → ④ 확정·수정 견적 →
-    ⑤ 최종 견적+계약서/NDA → ⑥ 과업 착수 → ⑦ 피드백 → ⑧ 과업 완료 →
-    ⑨ 결제 요청 (세금계산서 발행) → ⑩ 결제 완료
-  </p>
-  <p style="font-size:13px;color:var(--muted)">
-    <b>취소·조정 케이스 매우 많음.</b> 견적 발행 속도가 매출 전환에 직결. 툴의 핵심 가치는 <b>①문의 → ②견적 초안 자동 → ④수정 견적 재발행</b> 루프를 최소 힘으로 돌리는 것.
+  <p style="font-size:14px;color:var(--muted);margin-top:12px">
+    ※ 세금계산서 발행은 어차피 <b>홈택스</b> 에서 하시니까 프로그램에서 안 해도 됩니다. 세금계산서 발행 기능은 리서치 조건에서 제외.
   </p>
 </section>
 
-<!-- ─────────────────────────── SECTION 2 ─────────────────────────── -->
+<!-- ─────────────────────────── 2. 프로그램 6개 소개 ─────────────────────────── -->
 <section>
-  <h2>2 · 조합안 4종 · 언니 비즈니스에 뭐가 최선인가</h2>
+  <h2>2 · 어떤 프로그램들이 있어요?<small>제가 살펴본 6개를 짧게 소개할게요</small></h2>
 
-  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">
-    개별 툴 하나가 CRM·견적·인보이스·회계를 다 완벽하게 하지 않으므로, 실 도입은 항상 <b>2~3개 조합</b>입니다. 언니 비즈니스 특성(2인·100건/년·반복 견적·홈택스 별도)에 맞춘 4개 조합안:
-  </p>
+  <div class="card-list">
+    <div class="card top">
+      <div class="logo-row"><h3>Bonsai (본사이)</h3><span class="price">매달 5만 원쯤</span></div>
+      <p class="desc">프리랜서·소규모 회사 전용으로 만든 프로그램. <b>견적서 · 계약서 · 인보이스 · 고객 정보</b> 이걸 한 곳에서 다 할 수 있어요. 언니 회사 같은 규모에 딱 맞음.</p>
+      <p class="pros"><b>좋은 점</b> 견적서에 사인하면 인보이스가 자동으로 만들어져요. 반복 견적 편함</p>
+      <p class="cons"><b>아쉬운 점</b> 5년치 옛날 자료를 한번에 옮기려면 비싼 등급 필요 (147달러/월). 최근 자료만 옮기는 방법으로 우회 가능</p>
+    </div>
 
-  <div class="bundle-grid">
-    <article class="rec">
-      <div class="b-tag">🏆 BEST</div>
-      <h3>Bundle A · Bonsai 단독</h3>
-      <div class="b-price">Essentials $19/user × 2 = <b>$38/mo</b> (~₩51K)</div>
-      <p style="font-size:13.5px;margin:0">CRM · 프로포절 · 계약 · 인보이스 · 결제 · 클라이언트 포털을 <b>한 툴에서 다</b>. Proposal 승인 시 Invoice 자동 생성 = 언니 반복 견적 페인포인트 직접 해결.</p>
-      <div class="b-pros"><b>+</b> 학습 곡선 낮음 · 예산 절반 · 소규모 프리랜서 전용 설계</div>
-      <div class="b-cons"><b>-</b> Workpad 5년치 이관은 별도 (엑셀 정리) · 한글 UI 실측 필요</div>
-    </article>
+    <div class="card">
+      <div class="logo-row"><h3>Zoho (조호)</h3><span class="price">무료 ~ 2.6만 원</span></div>
+      <p class="desc">인도 회사에서 만든 사무용 프로그램 묶음. 견적서 프로그램 (Zoho Invoice) 은 <b>완전 무료</b> 로 쓸 수 있어요.</p>
+      <p class="pros"><b>좋은 점</b> 무료라 부담 없음. 세계 150개국 통화 지원. 옛날 자료 옮기기 편함</p>
+      <p class="cons"><b>아쉬운 점</b> 한국어로 나오는지 확실치 않음. 여러 앱을 왔다갔다 해야 함</p>
+    </div>
 
-    <article>
-      <div class="b-tag">가성비 극한</div>
-      <h3>Bundle B · Zoho 생태계</h3>
-      <div class="b-price">Invoice 무료 + CRM 무료 + Books $20 = <b>$20/mo</b> (~₩27K)</div>
-      <p style="font-size:13.5px;margin:0">Zoho CRM(무료) + Zoho Invoice(무료·500건/년) + 필요 시 Zoho Books($20/mo). CSV import 강력·다중통화 150+.</p>
-      <div class="b-pros"><b>+</b> 최저 비용 · CSV 이관 최강 · 회계까지 확장 가능</div>
-      <div class="b-cons"><b>-</b> 한국어 UI 미확인 (가장 큰 리스크) · 3개 앱 학습 · e-Sign 별도</div>
-    </article>
+    <div class="card">
+      <div class="logo-row"><h3>PandaDoc (판다닥)</h3><span class="price warn">매달 13만 원</span></div>
+      <p class="desc">전 세계에서 가장 많이 쓰는 견적서·계약서 프로그램. 큰 회사가 많이 씀. 기능이 제일 많음.</p>
+      <p class="pros"><b>좋은 점</b> 시장 표준 · 옛날 엑셀 자료 그대로 옮기기 편함 · 미래에 팀 커져도 계속 씀</p>
+      <p class="cons"><b>아쉬운 점</b> 예산보다 조금 비쌈 · 언니 회사 지금 규모엔 기능 오버스펙</p>
+    </div>
 
-    <article>
-      <div class="b-tag">시장 표준</div>
-      <h3>Bundle C · HubSpot Free + PandaDoc</h3>
-      <div class="b-price">HubSpot Free + Essentials $19/user × 2 = <b>$38/mo</b> (~₩51K)<br/><small style="color:var(--muted)">Business 이면 $98/mo (예산 초과)</small></div>
-      <p style="font-size:13.5px;margin:0">CRM은 HubSpot Free(2인·1K 컨택), 견적은 PandaDoc. 시장 표준 조합 · 확장성 최상.</p>
-      <div class="b-pros"><b>+</b> PandaDoc CSV catalog import 확실 · 미래 확장 좋음</div>
-      <div class="b-cons"><b>-</b> 툴 2개 학습 · Custom Quote/API 는 Business($98/mo) 부터</div>
-    </article>
+    <div class="card">
+      <div class="logo-row"><h3>Qwilr (퀼러)</h3><span class="price warn">매달 5~9만 원</span></div>
+      <p class="desc">견적서가 <b>웹페이지처럼 예쁘게</b> 나오는 게 특징. 고객이 링크 열면 인터랙티브한 화면으로 봄. 미학이 제일 강함.</p>
+      <p class="pros"><b>좋은 점</b> 견적서 보내면 고객이 감탄함 · 브랜딩 최상</p>
+      <p class="cons"><b>아쉬운 점</b> 1인 요금제라 2명이면 2배 · 한국어 확실치 않음</p>
+    </div>
 
-    <article>
-      <div class="b-tag">미학 축</div>
-      <h3>Bundle D · HubSpot Free + Qwilr</h3>
-      <div class="b-price">HubSpot Free + Starter $35/user (1인만) = <b>$35/mo</b> (~₩47K)<br/><small style="color:var(--muted)">2인 필요 시 $70/mo (Growth는 5인 강제)</small></div>
-      <p style="font-size:13.5px;margin:0">고객이 링크 열면 <b>인터랙티브 웹페이지</b> 형태 견적. 옵션 선택·서명·결제까지 웹에서. 미학 최상.</p>
-      <div class="b-pros"><b>+</b> 브랜딩·고객경험 벤치마크 · QwilrPay 결제 통합</div>
-      <div class="b-cons"><b>-</b> Starter 1인 제한 · 2 seat 원하면 $70 예산 상한 · 한글 미확인</div>
-    </article>
+    <div class="card">
+      <div class="logo-row"><h3>Better Proposals</h3><span class="price">매달 5.6만 원</span></div>
+      <p class="desc">Qwilr 랑 비슷한데 좀 더 저렴. 견적서 템플릿이 많고 예쁨.</p>
+      <p class="pros"><b>좋은 점</b> 가격 착함 · 서식 예쁨</p>
+      <p class="cons"><b>아쉬운 점</b> 한 달에 50건까지만 발행 가능 · 옛날 자료 옮기기 어려움</p>
+    </div>
+
+    <div class="card">
+      <div class="logo-row"><h3>Ignition (이그니션)</h3><span class="price warn">매달 13만 원+</span></div>
+      <p class="desc">회계 사무소 · 컨설팅 회사가 매달 자동 청구할 때 쓰는 프로그램.</p>
+      <p class="pros"><b>좋은 점</b> 매달 자동 청구 강력</p>
+      <p class="cons"><b>아쉬운 점</b> 언니처럼 <b>매번 다른 견적서 발행</b> 하는 회사엔 안 맞음. 오버스펙</p>
+    </div>
   </div>
+</section>
 
-  <!-- BEST 상세 -->
-  <div class="best" style="margin-top:40px">
-    <div class="crown">🏆 Best Fit for 언니</div>
-    <h3>Bundle A · Bonsai Essentials 2인 구성</h3>
-    <div class="price">$38/mo (연납) · 월 ₩51,000 · 예산 대비 51% 여유</div>
+<!-- ─────────────────────────── 3. BEST 추천 ─────────────────────────── -->
+<section>
+  <h2>3 · 그럼 뭐가 제일 좋아요?<small>언니 회사 규모 · 하시는 일 · 견적서 스타일을 봤을 때 이게 최고입니다</small></h2>
+
+  <div class="best">
+    <div class="crown">🏆 언니 회사에 제일 잘 맞는 것</div>
+    <h3>Bonsai (본사이)</h3>
+    <div class="price-tag">2명 · 매달 5만 1천 원 · 예산의 절반</div>
     <p>
-      <strong>왜 언니에게 이 조합이 최선인가</strong> — 100건/년 규모의 2인 팀에서 <b>Salesforce/HubSpot급 CRM 은 오버스펙</b>, 반대로 <b>Google Docs 는 자동화 zero 로 지금 엑셀과 같음</b>. Bonsai 는 정확히 그 사이 지점에 있는 <b>프리랜서·소규모 팀 전용 all-in-one</b> 입니다.
+      Bonsai 는 <strong>프리랜서와 작은 회사 (2~5명)</strong> 를 위해 만들어진 프로그램이에요. 언니 회사 규모에 정확히 맞아요. 큰 회사용 (Salesforce·HubSpot 같은) 은 너무 복잡하고, 무료 프로그램 (Google 문서 같은) 은 자동화가 없어서 지금 엑셀이랑 다를 게 없거든요.
     </p>
 
     <div class="reasons">
-      <ul>
-        <li><b>REASON 1</b> <span><b style="color:#fff">Proposal → Invoice 자동 파이프라인</b> · 언니의 핵심 페인포인트("취소·조정 반복 견적 발행이 하루를 다 잡아먹음")을 직접 해결. 견적서 승인 → 계약금 인보이스 자동 발행 → 잔금 스케줄까지 원 클릭</span></li>
-        <li><b>REASON 2</b> <span><b style="color:#fff">All-in-one</b> · CRM(고객·딜) + Proposal + Contract/NDA + Invoice + Client Portal 을 한 툴에서. 툴 하나만 익히면 됨</span></li>
-        <li><b>REASON 3</b> <span><b style="color:#fff">규모 정확히 fit</b> · 프리랜서·2~5인 팀 대상으로 설계. 100건/년 · 몇십 클라이언트 규모에 오버스펙 없음</span></li>
-        <li><b>REASON 4</b> <span><b style="color:#fff">예산 절반 여유</b> · ₩51K/mo (상한 ₩100K 대비 49% 여유) · 트라이얼 후 이동해도 sunk cost 작음</span></li>
-        <li><b>REASON 5</b> <span><b style="color:#fff">다중통화 확실</b> · Essentials부터 Multi-currency Billing 벤더 공식 확인 · Korea Risk Group 같은 외국 클라이언트 USD 견적 즉시 가능</span></li>
-      </ul>
+      <h4>이걸 추천하는 이유 5가지</h4>
+      <ol>
+        <li><b>견적서에 고객이 사인하면 → 인보이스가 자동으로 만들어져요</b><br/>지금 언니가 하루 종일 견적서 쓰고 인보이스 또 쓰는 그 반복 작업이 사라져요</li>
+        <li><b>고객 정보 · 견적서 · 계약서 · 인보이스가 한 곳에</b><br/>프로그램 하나만 배우면 되니까 팀원(1명)도 금방 익힘</li>
+        <li><b>언니 회사 규모에 딱 맞음</b><br/>1년 100건 · 몇십 명 고객 · 2명 팀 — 이게 Bonsai 가 만들어진 정확히 그 크기예요</li>
+        <li><b>예산이 절반 남음</b><br/>매달 5만 1천 원 → 매달 10만 원 예산 대비 절반 여유. 나중에 마음에 안 들면 다른 걸로 옮겨도 부담 없음</li>
+        <li><b>미국 달러 견적서도 됨</b><br/>Korea Risk Group 처럼 외국 클라이언트한테 달러로 견적서 보낼 수 있어요</li>
+      </ol>
     </div>
 
-    <div class="risks">
-      <h4>⚠️ Risk & Mitigation</h4>
+    <div class="worries">
+      <h4>⚠️ 걱정되는 점 3개 (다 해결 가능)</h4>
       <ul>
-        <li><b>R1</b> Workpad 5년치 800+건 CSV import 는 Elite($147/mo, 3인 최소) 필요 → <b>이관 스코프 축소</b>: 최근 2년치만 수동 입력 · 나머지는 참조용 엑셀 유지. 신규 견적부터 Bonsai 사용</li>
-        <li><b>R2</b> 한국어 UI 미확인 → 14일 트라이얼에서 즉시 확인 · 한글 폰트 임베드 실측</li>
-        <li><b>R3</b> Bonsai 는 홈택스 세금계산서 발행 안 됨 → clobe.ai 병행 유지 (원래 계획대로)</li>
+        <li><b>5년치 옛날 자료 옮기기</b> — 한번에 옮기려면 훨씬 비싼 등급이 필요해요 (매달 20만 원). 대신 최근 2년치만 손으로 넣고, 나머지는 엑셀에 그대로 두시는 게 실용적</li>
+        <li><b>한국어 화면 확인 필요</b> — 14일 무료로 써볼 수 있어요. 한글이 잘 나오는지 그때 확인</li>
+        <li><b>세금계산서 발행 안 됨</b> — 지금처럼 홈택스로 따로 하시면 돼요. 원래 계획대로</li>
       </ul>
     </div>
   </div>
 
-  <!-- Runner-ups -->
-  <div class="runner">
-    <div class="rank">🥈 Runner-up · 무료 티어부터 시작하고 싶다면</div>
-    <h3>Bundle B · Zoho Invoice (무료) + CRM (무료)</h3>
-    <div class="price">$0/mo (Books 추가 시 $20)</div>
-    <p>완전 무료로 시작 · CSV import 강력 (Workpad 5년치 이관 가능) · 다중통화 150+. <b>한국어 UI 지원 여부가 트라이얼에서 확인되면 Bonsai 대신 이거로 갈 만함.</b></p>
-    <p class="why"><b>Bonsai 대비 약점</b>: Proposal → Invoice 자동 연결 없음 · 여러 앱 왔다갔다 · e-Sign 별도. 이 3개 감수하면 비용 극한.</p>
+  <!-- 다른 선택지 -->
+  <div class="alt">
+    <div class="tag">🥈 만약 무료부터 시작하고 싶으시면</div>
+    <h3>Zoho Invoice (조호 인보이스)</h3>
+    <div class="price-tag">완전 무료 (필요하면 회계 프로그램 매달 2.6만 원 추가)</div>
+    <p>돈 안 들이고 시작할 수 있어요. 옛날 자료 옮기기가 특히 편함. 한국어 화면이 나오는지만 확인되면 Bonsai 대신 이걸로 가도 좋아요.</p>
+    <p style="font-size:13.5px;color:var(--muted)"><b>Bonsai 대비 아쉬운 점</b>: 견적서 → 인보이스 자동 연결이 없어서 각각 손으로 만들어야 함. 앱을 3개나 왔다갔다 해야 함 (Invoice · CRM · Books)</p>
   </div>
 
-  <div class="runner">
-    <div class="rank">🥉 Alt · 언니 팀이 커지거나 API 필요할 때</div>
-    <h3>Bundle C · HubSpot Free + PandaDoc Business</h3>
-    <div class="price">$0 + $49/user × 2 = $98/mo (예산 근접)</div>
-    <p>시장 표준 조합 · Custom Quote · Content Library · API · Approval Workflow. PandaDoc 이 카탈로그 CSV import를 공식 지원해서 이관도 안전.</p>
-    <p class="why"><b>지금은 오버스펙</b>: 100건/년 규모에 Business 는 과함. Essentials($38/mo)로 시작할 수 있지만 그러면 Custom Quote/CRM 통합 등이 빠짐. 향후 팀 4~5인 이상 커지면 Best Fit 후보로 재부상.</p>
+  <div class="alt">
+    <div class="tag">🥉 만약 팀이 5명 이상 커지면</div>
+    <h3>PandaDoc (판다닥)</h3>
+    <div class="price-tag">2명 · 매달 13만 원 (예산 조금 넘음)</div>
+    <p>세계에서 제일 유명한 견적서 프로그램. 지금 언니 회사엔 기능이 너무 많아서 오버스펙. 팀이 커지고 견적 볼륨이 늘면 그때 다시 검토할 만해요.</p>
   </div>
 </section>
 
-<!-- ─────────────────────────── SECTION 3 ─────────────────────────── -->
+<!-- ─────────────────────────── 4. 진행 방법 ─────────────────────────── -->
 <section>
-  <h2>3 · 개별 툴 상세 비교 (6종)</h2>
-
-  <div class="legend">
-    <span><b>신뢰도 라벨</b></span>
-    <span><b class="l1">벤더</b> 벤더 공식 페이지에서 확인</span>
-    <span><b class="l2">3rd</b> Capterra·G2·리뷰 요약 (원문 미확인)</span>
-  </div>
-
-  <table class="compare">
-    <thead>
-      <tr>
-        <th></th>
-        <th class="highlight">Bonsai<br/><small>🏆 BEST</small></th>
-        <th>Zoho Invoice+Books<br/><small>Runner-up</small></th>
-        <th>PandaDoc<br/><small>Alt (팀 확장 시)</small></th>
-        <th>Qwilr<br/><small>미학 축</small></th>
-        <th>Better Proposals<br/><small>저가 대안</small></th>
-        <th>Ignition<br/><small>제외 (오버)</small></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>월 요금 (2 seats, 연납)</th>
-        <td class="num highlight"><b>$38/mo</b><br/><small>Essentials × 2</small><span class="conf c1">벤더</span></td>
-        <td class="num ok"><b>$0~$20/mo</b><br/><small>Invoice 무료</small><span class="conf c1">벤더</span></td>
-        <td class="num">Essentials $38 · <b>Business $98</b><br/><small>실사용엔 Business</small><span class="conf c1">벤더</span></td>
-        <td class="num">Starter <b>$35 (1인)</b><br/>2인이면 $70<span class="conf c1">벤더</span></td>
-        <td class="num">Premium <b>$42/mo</b><br/><small>Starter는 1인만</small><span class="conf c1">벤더</span></td>
-        <td class="num">Core <b>$99/mo</b> (2인)<span class="conf c2">3rd</span></td>
-      </tr>
-      <tr>
-        <th>월 문서 제한</th>
-        <td class="ok highlight">무제한<span class="conf c1">벤더</span></td>
-        <td class="ok">Invoice 연 500건 · Books 무제한<span class="conf c1">벤더</span></td>
-        <td class="ok">무제한<span class="conf c2">3rd</span></td>
-        <td class="ok">무제한 페이지<span class="conf c1">벤더</span></td>
-        <td class="warn">Starter/Premium 50건/월<span class="conf c1">벤더</span></td>
-        <td class="ok">Core+ 무제한<span class="conf c2">3rd</span></td>
-      </tr>
-      <tr>
-        <th>Proposal → Invoice 자동</th>
-        <td class="ok highlight"><b>✅ 승인 시 자동 생성</b> ⭐<span class="conf c1">벤더</span></td>
-        <td class="warn">수동 (Invoice 툴에서 생성)<span class="conf c1">벤더</span></td>
-        <td class="ok">Approve → 결제까지<span class="conf c2">3rd</span></td>
-        <td class="ok">웹에서 옵션 선택 → 결제<span class="conf c1">벤더</span></td>
-        <td class="warn">수동<span class="conf c2">3rd</span></td>
-        <td class="ok">✅ 정기 Billing 강력<span class="conf c1">벤더</span></td>
-      </tr>
-      <tr>
-        <th>CRM 내장</th>
-        <td class="ok highlight">✅ 프리랜서 CRM<span class="conf c1">벤더</span></td>
-        <td class="ok">Zoho CRM 무료 연동<span class="conf c1">벤더</span></td>
-        <td class="warn">기본 컨택만 (HubSpot 연동 필요)<span class="conf c2">3rd</span></td>
-        <td class="warn">HubSpot/Zoho 연동<span class="conf c1">벤더</span></td>
-        <td class="warn">HubSpot 연동<span class="conf c2">3rd</span></td>
-        <td class="ok">회계·프로포절 CRM<span class="conf c2">3rd</span></td>
-      </tr>
-      <tr>
-        <th>다중 통화 (KRW/USD)</th>
-        <td class="ok highlight">✅ Essentials+<span class="conf c1">벤더</span></td>
-        <td class="ok">✅ 150+ 통화<span class="conf c1">벤더</span></td>
-        <td class="ok">✅<span class="conf c2">3rd</span></td>
-        <td class="warn">USD/AUD 위주<span class="conf c1">벤더</span></td>
-        <td class="ok">✅<span class="conf c2">3rd</span></td>
-        <td class="ok">✅<span class="conf c2">3rd</span></td>
-      </tr>
-      <tr>
-        <th>e-Signature</th>
-        <td class="ok highlight">✅ Essentials+<span class="conf c1">벤더</span></td>
-        <td class="warn">Zoho Sign 별도<span class="conf c1">벤더</span></td>
-        <td class="ok">✅ 무제한<span class="conf c2">3rd</span></td>
-        <td class="ok">✅ 기본<span class="conf c1">벤더</span></td>
-        <td class="ok">✅<span class="conf c2">3rd</span></td>
-        <td class="ok">✅<span class="conf c1">벤더</span></td>
-      </tr>
-      <tr>
-        <th>제품 카탈로그 CSV import</th>
-        <td class="no">❌ Elite ($147) 필요<span class="conf c1">벤더</span></td>
-        <td class="ok">✅ Books 강력<span class="conf c1">벤더</span></td>
-        <td class="ok highlight">✅ 10만개, 30MB, UTF-8<span class="conf c1">벤더</span></td>
-        <td class="warn">미확인<span class="conf c1">벤더</span></td>
-        <td class="no">❌ 미지원<span class="conf c2">3rd</span></td>
-        <td class="warn">미확인<span class="conf c2">3rd</span></td>
-      </tr>
-      <tr>
-        <th>연락처 CSV import</th>
-        <td class="warn">Elite 전용<span class="conf c1">벤더</span></td>
-        <td class="ok">✅ 강력<span class="conf c1">벤더</span></td>
-        <td class="ok">✅<span class="conf c2">3rd</span></td>
-        <td class="warn">HubSpot 연동 우회<span class="conf c1">벤더</span></td>
-        <td class="warn">Zapier 우회<span class="conf c2">3rd</span></td>
-        <td class="ok">Core+ 지원<span class="conf c2">3rd</span></td>
-      </tr>
-      <tr>
-        <th>디자인/미학</th>
-        <td class="warn">기본<span class="conf c2">3rd</span></td>
-        <td class="warn">기본<span class="conf c2">3rd</span></td>
-        <td class="ok">Business부터 브랜딩<span class="conf c1">벤더</span></td>
-        <td class="ok highlight"><b>⭐⭐⭐⭐⭐ 웹 인터랙티브</b><span class="conf c1">벤더</span></td>
-        <td class="ok">템플릿 강력<span class="conf c2">3rd</span></td>
-        <td class="warn">기본<span class="conf c2">3rd</span></td>
-      </tr>
-      <tr>
-        <th>회계 통합</th>
-        <td class="warn">기본 인보이싱<span class="conf c1">벤더</span></td>
-        <td class="ok highlight">✅ Books 강력<span class="conf c1">벤더</span></td>
-        <td class="warn">별도 툴 필요<span class="conf c2">3rd</span></td>
-        <td class="no">외부 (QuickBooks)<span class="conf c1">벤더</span></td>
-        <td class="warn">별도<span class="conf c2">3rd</span></td>
-        <td class="ok">Billing 자체가 강함<span class="conf c1">벤더</span></td>
-      </tr>
-      <tr>
-        <th>무료 트라이얼</th>
-        <td class="ok highlight">7일<span class="conf c2">3rd</span></td>
-        <td class="ok">14일 · Invoice 영구 무료<span class="conf c1">벤더</span></td>
-        <td class="ok">14일<span class="conf c2">3rd</span></td>
-        <td class="ok">14일 (카드 X)<span class="conf c1">벤더</span></td>
-        <td class="ok">14일 (카드 X)<span class="conf c2">3rd</span></td>
-        <td class="ok">14일<span class="conf c1">벤더</span></td>
-      </tr>
-      <tr>
-        <th>도입 난이도</th>
-        <td class="ok highlight">낮음<span class="conf c2">3rd</span></td>
-        <td class="warn">중 (앱 3개 학습)<span class="conf c2">3rd</span></td>
-        <td class="warn">중 (Business 이상)<span class="conf c2">3rd</span></td>
-        <td class="ok">낮음<span class="conf c2">3rd</span></td>
-        <td class="ok">낮음<span class="conf c2">3rd</span></td>
-        <td class="warn">중 (회계 특화)<span class="conf c2">3rd</span></td>
-      </tr>
-      <tr>
-        <th>시장 검증도 (G2/Capterra)</th>
-        <td class="warn">★★★<span class="conf c2">3rd</span></td>
-        <td class="ok">★★★★<span class="conf c2">3rd</span></td>
-        <td class="ok highlight">★★★★★ (Proposal 1위)<span class="conf c2">3rd</span></td>
-        <td class="ok">★★★★<span class="conf c2">3rd</span></td>
-        <td class="warn">★★★<span class="conf c2">3rd</span></td>
-        <td class="warn">★★★<span class="conf c2">3rd</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p style="font-size:12px;color:var(--muted);margin-top:14px">
-    ※ 취소수수료 4-tier · 천단위 절사 · 한글 UI 렌더링은 어느 툴도 벤더 공식 확인 불가 → 트라이얼 실측 필요<br/>
-    ※ 세금계산서 발행은 어차피 홈택스 직접 진행이라 요구사항 미포함<br/>
-    ※ Ignition 은 컨설팅/회계법인 정기 리테이너 특화 · 이벤트성 반복 견적엔 오버스펙으로 제외
-  </p>
-</section>
-
-<!-- ─────────────────────────── SECTION 4 · Extras ─────────────────────────── -->
-<section>
-  <h2>4 · 추가 검토 후보 (참고)</h2>
-
-  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">
-    메인 6개에서 우선순위 밀린 후보들. 특정 시나리오에서만 대안이 되므로 요약만.
-  </p>
-
-  <h3>해외 SaaS</h3>
-  <ul>
-    <li><b>Proposify</b> Basic $19/user (연납) · Basic 10건/월 제한. 100건/년엔 부적합</li>
-    <li><b>FreshBooks</b> Plus $43/mo + $11/추가유저 = $54/mo (2인). 인보이싱 위주, 프로포절 미학 약함</li>
-    <li><b>Wave</b> Starter 무료 · 견적/인보이스 무제한. <b>한글 렌더링 확인되면</b> Zoho 대안 후보</li>
-    <li><b>HubSpot Sales Starter</b> $20/seat = $40/mo (2인). 무료 CRM만으로 부족할 때 유료 확장</li>
-    <li><b>Dubsado</b> Starter $20/mo (3인 포함) · Premier $40/mo. 크리에이티브 프로 대상 · 한글 리스크</li>
-    <li><b>HoneyBook</b> $29+/mo. 미국 프리랜서 대상, 국제 대응 낮음</li>
-    <li><b>Xero</b> Standard ~$42/mo. 회계 통합 원할 때 · 한글 미확인</li>
-  </ul>
-
-  <h3>DIY 접근</h3>
-  <ul>
-    <li><b>Notion + Airtable</b> — flexible 하나 PDF export·e-Sign 별도. 초기 세팅 리소스 큼</li>
-    <li><b>Google Workspace + Docs Template</b> — 무료·간단. 자동화 zero. 현재 엑셀 워크플로와 비슷</li>
-  </ul>
-
-  <h3>한국 SaaS</h3>
-  <ul>
-    <li><b>세모장부</b> — 국내 프리랜서 회계 · 견적서 기능 있으나 공식 요금 미공개</li>
-    <li><b>더존 Smart A</b> — 국내 중소기업 90%+ 사용 · 클라우드 있음 · 요금 문의 · <b>clobe.ai 와 역할 겹침</b>이라 도입 시 배타적 선택 필요</li>
-  </ul>
-</section>
-
-<!-- ─────────────────────────── SECTION 5 · Next Steps ─────────────────────────── -->
-<section>
-  <h2>5 · 다음 스텝 (2주 스프린트)</h2>
+  <h2>4 · 그럼 어떻게 시작해요?<small>2주 안에 끝나는 단계별 계획이에요</small></h2>
 
   <div class="steps">
-    <div><span class="num">01</span><span class="task"><b>Bonsai 7일 트라이얼 개설</b> · Korea Risk Group 견적 재현 · 한글 폰트·UI 실측 · Proposal→Invoice 자동 연결 검증</span><span class="who">서현+언니</span></div>
-    <div><span class="num">02</span><span class="task">Zoho Invoice 무료 계정 개설 · Korea Risk Group 견적 재현 · 한국어 UI 지원 확인</span><span class="who">서현</span></div>
-    <div><span class="num">03</span><span class="task">(옵션) PandaDoc 14일 트라이얼 · Business tier 데모 요청 · 미래 확장 옵션 확인</span><span class="who">서현</span></div>
-    <div><span class="num">04</span><span class="task">두 트라이얼 실측 캡처·장단점 비교 → 언니에게 최종 브리핑, 선택</span><span class="who">서현</span></div>
-    <div><span class="num">05</span><span class="task">기존 견적 서식 3~5종 템플릿화 (동시통역 · 웨비나 · 번역 · 강의 · 프로젝트)</span><span class="who">언니</span></div>
-    <div><span class="num">06</span><span class="task">계약서/NDA 표준안 업로드 · e-Signature 흐름 설정</span><span class="who">언니</span></div>
-    <div><span class="num">07</span><span class="task">Workpad 이관 방식 결정 — 5년치 다 이관 (Zoho 선택 시) vs 최근 2년만 (Bonsai 선택 시)</span><span class="who">서현</span></div>
-    <div><span class="num">08</span><span class="task">clobe.ai 병행 프로세스 정의 (누가 언제 홈택스 세금계산서 발행)</span><span class="who">언니</span></div>
+    <div>
+      <span class="num">01</span>
+      <div class="task">
+        <b>Bonsai 무료로 7일 써보기</b>
+        영어 사이트 (hellobonsai.com) 가서 무료 체험 신청. Korea Risk Group 견적서를 실제로 만들어보고 한글이 잘 나오는지 확인.
+        <small>담당: 서현이가 개설 도와드릴게요 · 언니는 견적서 만들어보면서 편한지만 봐주세요</small>
+      </div>
+    </div>
+    <div>
+      <span class="num">02</span>
+      <div class="task">
+        <b>Zoho Invoice 도 무료로 열어보기 (동시에)</b>
+        예비 옵션으로 켜두기. 특히 한국어 메뉴 나오는지 확인.
+        <small>담당: 서현이 확인</small>
+      </div>
+    </div>
+    <div>
+      <span class="num">03</span>
+      <div class="task">
+        <b>둘 중에 뭐가 더 편한지 언니 결정</b>
+        7일 후에 언니한테 스크린샷 · 견적서 샘플 보여드리고 최종 선택.
+        <small>담당: 서현이 정리 → 언니 결정</small>
+      </div>
+    </div>
+    <div>
+      <span class="num">04</span>
+      <div class="task">
+        <b>선택한 프로그램에 요율표 · 서식 · 계좌 정보 세팅</b>
+        통역 A~E · 번역 a~d 요율을 미리 저장. 회사 로고, 하나은행 계좌, 사업자등록증 파일 업로드.
+        <small>담당: 언니 · 서현이 옆에서 도움</small>
+      </div>
+    </div>
+    <div>
+      <span class="num">05</span>
+      <div class="task">
+        <b>견적서 서식 3~5개 템플릿으로 저장</b>
+        동시통역용 · 웨비나용 · 번역용 · 강의용 · 프로젝트용 5개 유형별로.
+        <small>담당: 언니</small>
+      </div>
+    </div>
+    <div>
+      <span class="num">06</span>
+      <div class="task">
+        <b>계약서 · NDA 표준안 올리고 전자 서명 흐름 세팅</b>
+        고객이 온라인에서 서명할 수 있게.
+        <small>담당: 언니</small>
+      </div>
+    </div>
+    <div>
+      <span class="num">07</span>
+      <div class="task">
+        <b>옛날 자료 옮기기 (선택한 프로그램에 따라 다름)</b>
+        Zoho 로 정했으면 5년치 다 옮기고, Bonsai 면 최근 2년치만.
+        <small>담당: 서현이 엑셀 정리 도와드림</small>
+      </div>
+    </div>
+    <div>
+      <span class="num">08</span>
+      <div class="task">
+        <b>clobe.ai 와 프로그램 역할 나누기</b>
+        예: 견적서·인보이스는 Bonsai/Zoho, 세금계산서·회계는 clobe.ai + 홈택스. 팀원 1명이랑 규칙 공유.
+        <small>담당: 언니</small>
+      </div>
+    </div>
   </div>
 
-  <p style="font-size:13px;color:var(--muted);margin-top:18px">
-    스텝 1~3 은 병렬 가능. <b>9월 초 목표</b>. 예산 여유가 있으므로 첫 달은 두 툴 병행 트라이얼도 가능.
+  <p style="font-size:14px;color:var(--muted);margin-top:16px">
+    ※ 1~2단계는 동시에 진행 가능. <b>9월 초까지</b> 목표. 예산 여유가 있어서 첫 달은 두 프로그램 다 유료 결제해서 병행해봐도 괜찮아요.
   </p>
 </section>
 
-<!-- ─────────────────────────── SECTION 6 · Sources ─────────────────────────── -->
+<!-- ─────────────────────────── 5. 용어 사전 ─────────────────────────── -->
 <section>
-  <h2>6 · 참고 자료 (신뢰도별)</h2>
+  <h2>5 · 자주 나오는 영어 단어 뜻</h2>
 
-  <div class="sources">
-    <h4>벤더 공식 (Tier 1 신뢰도)</h4>
-    <ul>
-      <li><b>Bonsai — Pricing & Auto-Invoice on Proposal Acceptance</b> <a href="https://www.hellobonsai.com/pricing">hellobonsai.com</a> · <a href="https://help.hellobonsai.com/en/articles/2157748-automating-invoices-when-your-proposals-are-accepted">Bonsai Help Center</a></li>
-      <li><b>Zoho Invoice — Pricing (Free plan, 2 users, 500 invoices/year)</b> <a href="https://www.zoho.com/invoice/pricing.html">zoho.com/invoice</a></li>
-      <li><b>Zoho Books — Multilingual announcement</b> <a href="https://www.zoho.com/blog/books/zoho-books-is-now-multilingual.html">zoho.com/blog</a></li>
-      <li><b>PandaDoc — Pricing · Business/Enterprise 세부</b> <a href="https://www.pandadoc.com/pricing/">pandadoc.com</a></li>
-      <li><b>PandaDoc — Import products via CSV (10만개, 30MB, UTF-8)</b> <a href="https://support.pandadoc.com/en/articles/9714700-import-and-export-your-catalog-via-csv">support.pandadoc.com</a></li>
-      <li><b>PandaDoc — Variables</b> <a href="https://support.pandadoc.com/en/articles/9714599-variables">support.pandadoc.com</a></li>
-      <li><b>PandaDoc — G2 Proposal Grid 1위 (2026 Spring)</b> <a href="https://www.pandadoc.com/blog/pandadoc-highest-rated-proposal-software-g2-spring-2026/">pandadoc.com/blog</a></li>
-      <li><b>Qwilr — Pricing (Starter $35/user, Growth $55)</b> <a href="https://qwilr.com/pricing">qwilr.com</a> · <a href="https://qwilr.com/compare/pandadoc/">Qwilr vs PandaDoc</a></li>
-      <li><b>Better Proposals — Pricing (Starter $13·Premium $21 연납)</b> <a href="https://betterproposals.io/pricing">betterproposals.io</a></li>
-      <li><b>Ignition — Proposals & Billing docs</b> <a href="https://www.ignitionapp.com/pricing">ignitionapp.com</a> · <a href="https://support.ignitionapp.com/en/articles/6446488-proposals-3-services-and-billing-5-mins">Ignition Help Center</a></li>
-      <li><b>Wave — Pricing (Starter Free · Pro $19)</b> <a href="https://www.waveapps.com/pricing">waveapps.com</a></li>
-      <li><b>Proposify — Pricing (Basic/Team/Business)</b> <a href="https://www.proposify.com/pricing">proposify.com</a></li>
-      <li><b>FreshBooks — Pricing (Lite/Plus/Premium)</b> <a href="https://www.freshbooks.com/pricing">freshbooks.com</a></li>
-    </ul>
+  <div class="glossary">
+    <h3>이 문서 읽을 때 걸리는 영어 단어가 있다면</h3>
+    <dl>
+      <dt>CRM</dt><dd>고객 정보 관리 프로그램 (누가 언제 뭐 문의했는지 정리)</dd>
+      <dt>Invoice</dt><dd>인보이스 · 청구서 (돈 얼마 달라고 보내는 종이)</dd>
+      <dt>Proposal</dt><dd>견적서 · 제안서</dd>
+      <dt>Estimate</dt><dd>견적서 (Proposal 이랑 비슷하게 씀)</dd>
+      <dt>e-Signature</dt><dd>전자 서명 (인터넷으로 사인)</dd>
+      <dt>PDF Export</dt><dd>PDF 파일로 저장/다운로드</dd>
+      <dt>Template</dt><dd>서식 · 양식 (자주 쓰는 걸 미리 저장한 것)</dd>
+      <dt>Client Portal</dt><dd>고객 전용 화면 (고객이 로그인해서 자기 견적서·계약서 보는 곳)</dd>
+      <dt>CSV Import</dt><dd>엑셀 파일 옮겨오기</dd>
+      <dt>Multi-currency</dt><dd>여러 나라 돈 지원 (한국 원 · 미국 달러 · 유로 등)</dd>
+      <dt>Free Trial</dt><dd>무료 체험 (보통 7일 or 14일)</dd>
+    </dl>
+  </div>
+</section>
 
-    <h4>3rd party 요약 (Tier 2 신뢰도)</h4>
-    <ul>
-      <li><b>PandaDoc Pricing 2026</b> <a href="https://www.vendr.com/marketplace/pandadoc">vendr.com</a> · <a href="https://axisconsulting.io/pandadoc-pricing-guide/">axisconsulting.io</a></li>
-      <li><b>Better Proposals · Ignition · Bonsai Alternatives</b> <a href="https://www.capterra.com/p/153794/Better-Proposals/pricing/">Capterra</a> · <a href="https://www.capterra.com/compare/143254-153794/Qwilr-vs-Better-Proposals">Qwilr vs BP</a></li>
-      <li><b>Ignition Pricing 2026 (Solo/Core/Pro/Pro+)</b> <a href="https://scribehow.com/page/Ignition_App_Review_2026_Real_Costs_for_Accounting_Firms__E2ERxPk-RTeafizmdee_3A">scribehow.com</a></li>
-      <li><b>HubSpot Sales Hub Pricing 2026</b> <a href="https://blog.hubspot.com/sales/hubspot-sales-hub-pricing">blog.hubspot.com</a></li>
-      <li><b>Dubsado · HoneyBook Pricing 2026</b> <a href="https://schedulingkit.com/pricing-guides/dubsado-pricing">schedulingkit.com</a> · <a href="https://checkthat.ai/brands/honeybook/pricing">checkthat.ai</a></li>
-    </ul>
+<!-- ─────────────────────────── 6. 참고 자료 ─────────────────────────── -->
+<section>
+  <h2>6 · 이 정보 어디서 봤어요?<small>혹시 언니가 직접 확인하고 싶으시면</small></h2>
 
-    <h4>한국 SaaS · DIY 접근 (참고)</h4>
-    <ul>
-      <li><b>한국 회계 프로그램 8가지 비교 (2026)</b> <a href="https://www.lido.app/kr/hoegye-program-bigyo">lido.app</a> — 세모장부·더존·자비스 등 국내 프리랜서/중소기업 회계 툴 개관</li>
-      <li><b>더존 Smart A 제품 소개</b> <a href="https://www.douzone.com/product/smarta2.jsp">douzone.com</a></li>
+  <div class="need">
+    <ul style="list-style:none;padding-left:0">
+      <li style="padding:8px 0;border-top:1px solid #eef1ef;font-size:13.5px"><b>Bonsai (본사이) 가격 · 기능</b> → <a href="https://www.hellobonsai.com/pricing">hellobonsai.com/pricing</a></li>
+      <li style="padding:8px 0;border-top:1px solid #eef1ef;font-size:13.5px"><b>Zoho Invoice 무료 가입</b> → <a href="https://www.zoho.com/invoice/">zoho.com/invoice</a></li>
+      <li style="padding:8px 0;border-top:1px solid #eef1ef;font-size:13.5px"><b>PandaDoc 가격</b> → <a href="https://www.pandadoc.com/pricing/">pandadoc.com/pricing</a></li>
+      <li style="padding:8px 0;border-top:1px solid #eef1ef;font-size:13.5px"><b>Qwilr 가격</b> → <a href="https://qwilr.com/pricing">qwilr.com/pricing</a></li>
+      <li style="padding:8px 0;border-top:1px solid #eef1ef;font-size:13.5px"><b>Better Proposals 가격</b> → <a href="https://betterproposals.io/pricing">betterproposals.io/pricing</a></li>
     </ul>
   </div>
 </section>
@@ -526,7 +375,7 @@
 </main>
 
 <footer>
-  <div>Beehive Corp · Quote+CRM Research · 2026-08-13 · 준비 김서현</div>
+  Beehive Corp · 견적서 프로그램 추천 · 2026-08-13 · 준비 김서현
 </footer>
 
 </body>
