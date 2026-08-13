@@ -3,72 +3,75 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>비하이브 · 아마존 키워드 광고 가이드 (초안) — 2026-08-13</title>
+<title>비하이브 · 아마존 광고, 이렇게 하면 돼요 (초안) — 2026-08-13</title>
 <style>
   :root{
     --navy:#0a1628; --ink:#152031; --muted:#657386;
     --line:#dce3e5; --paper:#f4f6f3; --white:#fff;
     --mint:#5ce1b9; --mint-dark:#0d8d6b; --amber:#f2b84b; --danger:#c53f3f;
-    --gold:#c9a45c;
+    --gold:#c9a45c; --sky:#e8f0f5;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--paper);color:var(--ink);
     font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased;line-height:1.75;word-break:keep-all;font-size:16px}
+    -webkit-font-smoothing:antialiased;line-height:1.85;word-break:keep-all;font-size:16px}
   a{color:var(--mint-dark);text-decoration:none;font-weight:600}
   a:hover{text-decoration:underline}
 
   header.top{background:var(--navy);color:#fff;padding:56px max(28px,50vw - 500px)}
   header.top .eyebrow{color:var(--mint);letter-spacing:.08em;font-size:12px;font-weight:800;margin-bottom:14px}
-  header.top h1{font-size:clamp(30px,4.5vw,44px);letter-spacing:-.02em;line-height:1.2;margin-bottom:14px}
-  header.top p{color:#c8d5e2;font-size:16px;max-width:640px;line-height:1.75}
+  header.top h1{font-size:clamp(30px,4.5vw,44px);letter-spacing:-.02em;line-height:1.25;margin-bottom:14px}
+  header.top p{color:#c8d5e2;font-size:16px;max-width:640px;line-height:1.8}
   header.top .meta{color:#8ca0b6;font-size:13px;display:flex;gap:22px;flex-wrap:wrap;margin-top:22px}
   header.top .meta b{color:#e2eaf1;font-weight:600}
   header.top .draft{display:inline-block;background:var(--amber);color:var(--navy);font-family:ui-monospace,monospace;font-size:11px;font-weight:900;padding:3px 10px;letter-spacing:.06em;margin-top:14px}
 
   main{max-width:960px;margin:0 auto;padding:60px 28px 90px}
   section{margin-bottom:70px}
-  h2{font-size:26px;letter-spacing:-.02em;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--navy)}
+  h2{font-size:26px;letter-spacing:-.02em;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--navy);line-height:1.4}
   h2 small{display:block;color:var(--muted);font-size:14px;font-weight:400;margin-top:6px}
-  h3{font-size:19px;letter-spacing:-.015em;margin:22px 0 10px}
+  h3{font-size:19px;letter-spacing:-.015em;margin:22px 0 10px;line-height:1.4}
   p{color:#3a4655;margin-bottom:14px}
   ul,ol{padding-left:24px;color:#3a4655;margin-bottom:14px}
-  li{margin-bottom:8px}
+  li{margin-bottom:10px}
 
-  .lede{font-size:16px;color:var(--ink);line-height:1.85;background:#fff;border-left:4px solid var(--mint);padding:20px 24px;margin-bottom:34px}
+  .lede{font-size:16px;color:var(--ink);line-height:1.9;background:#fff;border-left:4px solid var(--mint);padding:22px 26px;margin-bottom:34px}
   .lede b{color:var(--navy)}
+
+  /* 비유 박스 */
+  .analogy{background:var(--sky);border-left:4px solid #6b8ca8;padding:18px 22px;margin:14px 0;font-size:14.5px;line-height:1.75;color:#2c3e50}
+  .analogy b{color:var(--navy)}
+  .analogy .tag{display:inline-block;background:#6b8ca8;color:#fff;font-size:11px;font-weight:800;padding:2px 8px;margin-right:8px;letter-spacing:.04em;vertical-align:middle;font-family:ui-monospace,monospace}
 
   /* 카운터 리스트 */
   .steps{background:#fff;border:1px solid var(--line);padding:26px 30px}
   .steps ol{list-style:none;padding-left:0;counter-reset:sc;margin-bottom:0}
-  .steps li{counter-increment:sc;position:relative;padding:14px 0 14px 44px;border-top:1px solid #eef1ef;font-size:15px;line-height:1.75;margin:0}
+  .steps li{counter-increment:sc;position:relative;padding:16px 0 16px 44px;border-top:1px solid #eef1ef;font-size:15px;line-height:1.8;margin:0}
   .steps li:first-child{border-top:0}
-  .steps li::before{content:counter(sc);position:absolute;left:0;top:16px;background:var(--navy);color:#fff;font-weight:800;text-align:center;line-height:26px;font-size:12px;border-radius:50%;width:26px;height:26px}
-  .steps li b{display:block;color:var(--ink);margin-bottom:4px}
-  .steps li small{display:block;color:var(--muted);font-size:13px;line-height:1.65}
+  .steps li::before{content:counter(sc);position:absolute;left:0;top:18px;background:var(--navy);color:#fff;font-weight:800;text-align:center;line-height:26px;font-size:12px;border-radius:50%;width:26px;height:26px}
+  .steps li b{display:block;color:var(--ink);margin-bottom:4px;font-size:15.5px}
+  .steps li small{display:block;color:var(--muted);font-size:13.5px;line-height:1.7}
 
-  /* 광고 유형 카드 */
+  /* 카드 3분할 */
   .card-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
   .card{background:#fff;border:1px solid var(--line);padding:22px 24px}
   .card.top{border-top:4px solid var(--gold);background:#fdfaf1}
   .card .logo-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
   .card h3{margin:0;font-size:17px}
   .card .price{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--mint-dark);font-weight:800;white-space:nowrap}
-  .card .desc{font-size:14px;color:#3a4655;margin-bottom:12px;line-height:1.7}
-  .card .pros{font-size:13px;color:var(--mint-dark);margin-bottom:6px;line-height:1.6}
-  .card .cons{font-size:13px;color:#8a651f;line-height:1.6}
-  .card .pros b, .card .cons b{font-family:ui-monospace,monospace;font-size:10px;font-weight:800;margin-right:6px;padding:1px 6px}
-  .card .pros b{background:#d5f5ea;color:var(--mint-dark)}
-  .card .cons b{background:#fef0d3;color:#8a651f}
+  .card .desc{font-size:14px;color:#3a4655;margin-bottom:12px;line-height:1.75}
+  .card .desc b{color:var(--navy)}
+  .card .easy{font-size:13px;color:#556677;line-height:1.7;margin-top:8px;padding-top:10px;border-top:1px dashed #d5dde3}
+  .card .easy::before{content:"💡 쉽게 말하면 ";font-weight:800;color:var(--mint-dark);font-size:12px}
 
   /* Phase 박스 */
   .phase{background:#fff;border:1px solid var(--line);padding:26px 30px;margin-bottom:16px;border-left:4px solid var(--navy)}
   .phase .tag{color:var(--muted);font-family:ui-monospace,monospace;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
   .phase h3{margin:0 0 8px;font-size:20px}
-  .phase .period{font-family:ui-monospace,monospace;font-size:12px;color:var(--mint-dark);font-weight:800;margin-bottom:14px}
-  .phase p{font-size:14.5px;line-height:1.75;margin-bottom:10px}
-  .phase ul{font-size:14px;line-height:1.7}
+  .phase .period{font-family:ui-monospace,monospace;font-size:12.5px;color:var(--mint-dark);font-weight:800;margin-bottom:14px}
+  .phase p{font-size:14.5px;line-height:1.8;margin-bottom:10px}
+  .phase ul{font-size:14px;line-height:1.75}
   .phase.rec{border-left-color:var(--gold);background:#fdfaf1}
 
   /* 예산 테이블 */
@@ -78,56 +81,44 @@
   .budget td.num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--navy);font-weight:700;text-align:right}
   .budget td.mono{font-family:ui-monospace,monospace;font-size:13px}
   .budget tr:hover{background:#f8faf8}
-  .budget tfoot td{background:#f4f6f3;font-weight:700;color:var(--navy);border-top:2px solid var(--navy)}
-
-  /* BEST 박스 */
-  .best{background:linear-gradient(135deg, var(--navy) 0%, #1a3050 100%);color:#fff;padding:44px 48px;margin:24px 0;position:relative;overflow:hidden}
-  .best::before{content:"";position:absolute;top:0;left:0;width:6px;height:100%;background:var(--gold)}
-  .best .crown{color:var(--gold);letter-spacing:.12em;font-size:13px;font-weight:800;text-transform:uppercase;margin-bottom:16px}
-  .best h3{color:#fff;font-size:28px;margin-bottom:6px;letter-spacing:-.02em}
-  .best .price-tag{color:var(--gold);font-family:ui-monospace,monospace;font-size:15px;font-weight:800;margin-bottom:24px}
-  .best > p{color:#c8d5e2;font-size:15px;margin-bottom:14px;line-height:1.8}
-  .best > p strong{color:var(--gold)}
-  .best .reasons{margin-top:22px;padding-top:24px;border-top:1px solid #2c4056}
-  .best .reasons > h4{color:var(--gold);letter-spacing:.08em;font-size:12px;text-transform:uppercase;margin-bottom:14px}
-  .best .reasons ol{list-style:none;padding-left:0;counter-reset:rc;margin:0}
-  .best .reasons li{counter-increment:rc;position:relative;padding:12px 0 12px 44px;color:#dbe4ea;font-size:14.5px;line-height:1.8;margin:0;border:0}
-  .best .reasons li::before{content:counter(rc);position:absolute;left:0;top:14px;background:var(--gold);color:var(--navy);font-weight:900;text-align:center;line-height:24px;font-size:12px;border-radius:50%;width:24px;height:24px}
-  .best .reasons li b{color:#fff;display:block;margin-bottom:4px}
+  .budget tfoot td{background:#f4f6f3;font-weight:700;color:var(--navy);border-top:2px solid var(--navy);font-size:12.5px}
 
   /* 경고 박스 */
   .warn-box{background:rgba(242,184,75,.12);border-left:3px solid var(--amber);padding:20px 24px;margin-top:14px}
   .warn-box h4{color:#8a651f;font-size:13px;letter-spacing:.04em;margin-bottom:10px}
-  .warn-box p, .warn-box li{color:#5a4a20;font-size:14px;line-height:1.75}
+  .warn-box p, .warn-box li{color:#5a4a20;font-size:14.5px;line-height:1.8}
 
   /* 지표 카드 */
   .metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .metric{background:#fff;border:1px solid var(--line);padding:22px 24px}
   .metric .m-name{font-family:ui-monospace,monospace;color:var(--navy);font-weight:800;font-size:14px;letter-spacing:.04em;margin-bottom:4px}
   .metric .m-full{color:var(--muted);font-size:12px;margin-bottom:10px}
-  .metric .m-desc{font-size:14px;color:#3a4655;line-height:1.7;margin-bottom:10px}
+  .metric .m-desc{font-size:14.5px;color:#3a4655;line-height:1.75;margin-bottom:10px}
+  .metric .m-desc b{color:var(--navy)}
+  .metric .m-easy{background:var(--sky);padding:10px 14px;font-size:13.5px;color:#2c3e50;line-height:1.7;margin-bottom:10px}
+  .metric .m-easy b{color:var(--navy)}
   .metric .m-benchmark{background:#f4f6f3;padding:10px 14px;font-family:ui-monospace,monospace;font-size:13px;color:var(--navy)}
 
   /* 용어 사전 */
   .glossary{background:#e9ede9;padding:24px 28px;margin-top:20px}
   .glossary h3{margin:0 0 10px;font-size:16px;color:var(--navy)}
-  .glossary dl{display:grid;grid-template-columns:120px 1fr;gap:6px 18px;font-size:13.5px}
+  .glossary dl{display:grid;grid-template-columns:120px 1fr;gap:8px 18px;font-size:13.5px}
   .glossary dt{font-weight:800;color:var(--navy);font-family:ui-monospace,monospace;font-size:12px}
-  .glossary dd{color:#5a6674;margin:0}
+  .glossary dd{color:#5a6674;margin:0;line-height:1.7}
 
   /* 참고 자료 */
   .refs{background:#fff;border:1px solid var(--line);padding:20px 26px}
   .refs ul{list-style:none;padding-left:0;margin:0;color:#3a4655}
-  .refs li{padding:10px 0;border-top:1px solid #eef1ef;font-size:13.5px;line-height:1.6;margin:0}
+  .refs li{padding:10px 0;border-top:1px solid #eef1ef;font-size:13.5px;line-height:1.7;margin:0}
   .refs li:first-child{border-top:0}
   .refs li b{color:var(--ink);display:inline}
 
   /* 체크리스트 */
   .checklist{background:#fff;border:1px solid var(--line);padding:26px 30px}
   .checklist ul{list-style:none;padding-left:0;margin:0}
-  .checklist li{padding:12px 0 12px 32px;border-top:1px solid #eef1ef;position:relative;font-size:14.5px;line-height:1.7;margin:0}
+  .checklist li{padding:14px 0 14px 32px;border-top:1px solid #eef1ef;position:relative;font-size:14.5px;line-height:1.75;margin:0}
   .checklist li:first-child{border-top:0}
-  .checklist li::before{content:"☐";position:absolute;left:0;top:11px;color:var(--navy);font-size:18px;font-weight:900}
+  .checklist li::before{content:"☐";position:absolute;left:0;top:12px;color:var(--navy);font-size:18px;font-weight:900}
   .checklist li b{color:var(--ink)}
 
   footer{background:var(--navy);color:#8ba0b6;padding:26px max(28px,50vw - 500px);font-size:12px}
@@ -136,8 +127,6 @@
   @media (max-width:720px){
     .card-list{grid-template-columns:1fr}
     .metric-grid{grid-template-columns:1fr}
-    .best{padding:32px 24px}
-    .best h3{font-size:22px}
     .glossary dl{grid-template-columns:1fr;gap:2px 0}
     .glossary dd{margin-bottom:8px}
   }
@@ -146,13 +135,13 @@
 <body>
 
 <header class="top">
-  <div class="eyebrow">언니에게 드리는 리서치 · 2026-08-13</div>
-  <h1>아마존 키워드 광고, 이렇게 세팅해요</h1>
-  <p>9월에 상품 리스팅 · 10월 초에 광고 태우기. 계정 로그인 없이 만든 초안이라, 실제 화면 뜨면 함께 매칭하면서 최종본 만들 예정입니다.</p>
+  <div class="eyebrow">언니에게 드리는 가이드 · 2026-08-13</div>
+  <h1>아마존 광고, 이렇게 하면 돼요</h1>
+  <p>아마존에서 처음 광고 태우실 때 뭘 어떻게 해야 하는지 · 왜 그렇게 해야 하는지 · 하나씩 쉬운 말로 정리했어요. 어려운 영어 나올 때마다 옆에 뜻 붙여둘게요.</p>
   <div class="meta">
-    <span><b>대상 상품</b> 비타민 미스트 · 프리타임 파우더 워시 14개입 (각 USD 9.99)</span>
-    <span><b>예산</b> 50~80만 원 (약 $360~$580)</span>
-    <span><b>집행 시점</b> 10월 초</span>
+    <span><b>상품</b> 비타민 미스트 · 프리타임 파우더 워시 (각 9,900원쯤)</span>
+    <span><b>광고 예산</b> 한 달 50~80만 원</span>
+    <span><b>시작</b> 10월 초</span>
   </div>
   <span class="draft">DRAFT · 초안</span>
 </header>
@@ -160,271 +149,300 @@
 <main>
 
 <p class="lede">
-  이 문서 읽는 순서: <b>① 지금 상황·목표</b> → <b>② 아마존 광고 3종류</b> → <b>③ 3단계 실행 로드맵</b> → <b>④ 실제 캠페인 세팅(예산·입찰가)</b> → <b>⑤ 키워드 찾는 방법</b> → <b>⑥ 성과 지표 읽는 법</b> → <b>⑦ 언니가 직접 챙길 체크리스트</b>.<br/>
-  결론부터: <b>Sponsored Products · Auto 캠페인 2주 → Manual 캠페인</b> 순서로 · 예산은 <b>하루 $10~15</b> 로 시작.
+  <b>이 문서 읽는 순서</b> — ① 지금 뭐 하는 거예요? → ② 아마존 광고에도 종류가 있어요 → ③ 어떤 순서로 해요? (3단계) → ④ 돈은 얼마씩 나눠 써요? → ⑤ 어떤 검색어로 광고해요? → ⑥ 잘 되고 있는지 어떻게 알아요? → ⑦ 언니가 미리 챙길 것.<br/><br/>
+  <b>결론부터 말하면</b> — 광고 3종류 중에 <b>「Sponsored Products」 딱 하나</b>만 하시면 돼요. 처음 2주는 <b>「자동 모드」</b>로 아마존한테 알아서 하게 두고 · 그다음부터 <b>「수동 모드」</b>로 잘 팔리는 검색어에만 집중. 하루 광고비는 <b>1만 5천 원~2만 원</b> 정도로 시작.
 </p>
 
 <!-- ─────────────────────────── 1. 지금 상황 ─────────────────────────── -->
 <section>
-  <h2>1 · 지금 상황과 목표<small>왜 이 순서로 해야 하는지 먼저 정리</small></h2>
+  <h2>1 · 지금 우리가 뭘 하는 거예요?<small>왜 이 순서로 해야 하는지 먼저 알고 가요</small></h2>
+
+  <div class="analogy">
+    <span class="tag">💡 비유</span>
+    <b>학교 앞에 새 문방구를 여는 상황</b>이라고 생각해봐요. 아직 아무도 우리 가게를 몰라요. 그러면 (1) 처음엔 물건값을 좀 싸게 팔고 → (2) 친구들이 "여기 좋더라!" 후기 남겨주면 → (3) 그다음에 학교 앞 전봇대에 포스터 붙여요(=광고). 이게 지금 우리가 아마존에서 하려는 순서예요.
+  </div>
 
   <div class="steps">
     <ol>
-      <li><b>9월 중 아마존 FBA 발송 예정</b><small>물류회사 컨택 완료 · 상품 2종 (비타민 미스트 / 프리타임 파우더 워시 14개입)</small></li>
-      <li><b>초기 가격은 낮게 시작 (USD 9.99)</b><small>신규 셀러 · 리뷰 0 상태에서 경쟁 상품보다 비싸면 아무도 안 삼. 마진 낮춰서 첫 판매·리뷰 확보 우선</small></li>
-      <li><b>초기 리뷰 확보 → 별점 4.0 이상 달성</b><small>지인·기존 고객·Vine 프로그램 등 활용. 리뷰 10개 이상 · 별점 4.0 이상이 광고 효율의 임계점</small></li>
-      <li><b>10월 초 키워드 광고 집행 (50~80만원)</b><small>리뷰가 어느 정도 쌓인 상태에서 광고를 태워야 광고비 회수됨. 리뷰 없이 광고 태우면 CTR·CVR 다 낮아서 돈만 나감</small></li>
-      <li><b>목표: 오가닉 순위 진입</b><small>광고로 초기 판매를 만들어 아마존 알고리즘에 "이 상품 잘 팔림" 시그널을 주고 → 무료 검색결과(오가닉)에서도 노출되게 만드는 게 최종 목표</small></li>
+      <li><b>9월에 상품을 아마존 창고로 보내요</b><small>물류회사에서 도와줄 거예요. 아마존이 우리 대신 상품을 보관하고 · 주문 오면 포장·배송까지 다 해줘요 (이걸 FBA 라고 불러요)</small></li>
+      <li><b>처음엔 가격을 낮게 (약 9,900원) 붙여요</b><small>새 셀러라서 아무도 모르는 상태 · 후기(리뷰)도 0개. 이럴 때 비싸면 안 팔려요. 마진 조금 손해 봐도 첫 판매·첫 후기부터 만드는 게 우선</small></li>
+      <li><b>후기(리뷰) 10개 이상 · 별점 4점 넘게 만들어요</b><small>지인·기존 손님한테 사서 써보게 하거나 · 아마존이 인정한 후기단(Vine 프로그램) 신청. 후기 없으면 광고 아무리 태워도 사람들이 안 사요</small></li>
+      <li><b>10월 초에 광고를 시작해요 (50~80만 원)</b><small>후기가 좀 쌓인 상태에서 광고를 태워야 광고비 값어치를 해요. 후기 없이 광고하면 돈만 나가요</small></li>
+      <li><b>진짜 목표: "광고 없이도 잘 팔리는 상품" 되기</b><small>광고로 첫 매출 만들어주면 → 아마존이 "이 상품 인기 있네" 알아채고 → 그다음부터는 공짜 검색결과에서도 위로 올려줘요. 이게 최종 목표</small></li>
     </ol>
   </div>
 
   <div class="warn-box">
-    <h4>⚠️ 미리 짚고 갈 점</h4>
-    <p>이 초안은 <b>Seller Central 로그인 없이</b> 아마존 공식 문서·업계 표준 자료를 기반으로 작성했어요. 실제 UI 화면(캠페인 만드는 버튼 위치 등)은 계정 열리는 시점에 함께 매칭하면서 확정할 예정입니다. 지금 문서는 <b>"왜 이렇게 해야 하는지"</b> 를 이해하는 용도로 봐주세요.</p>
+    <h4>⚠️ 미리 알려드릴 것</h4>
+    <p>이 문서는 <b>아마존 셀러 사이트에 아직 로그인 못 한 상태에서</b> 공식 자료만 보고 만든 초안이에요. 실제로 광고 만드는 화면(어디 눌러야 하는지 등)은 계정 열리면 <b>함께 화면 보면서 매칭</b>하는 걸로 할게요. 지금은 <b>"왜 이렇게 하는지"</b> 를 이해하는 용도로 봐주시면 돼요.</p>
   </div>
 </section>
 
 <!-- ─────────────────────────── 2. 광고 3종류 ─────────────────────────── -->
 <section>
-  <h2>2 · 아마존 광고 3종류<small>초보자는 이 중 하나만 하면 됩니다</small></h2>
+  <h2>2 · 아마존 광고에도 종류가 있어요<small>3가지 있는데 초보자는 딱 하나만 하면 돼요</small></h2>
+
+  <div class="analogy">
+    <span class="tag">💡 비유</span>
+    <b>학교 알림 방식 3가지</b> 같은 거예요. (1) 교실 앞 알림판(=검색결과에 상품 광고) · (2) 학교 정문 큰 현수막(=브랜드 배너 광고) · (3) 다른 학교 방송실까지 광고(=아마존 밖 사이트 광고). 우리는 <b>알림판 하나만</b> 하면 돼요. 나머지 둘은 지금 안 해도 돼요.
+  </div>
 
   <div class="card-list">
     <div class="card top">
-      <div class="logo-row"><h3>Sponsored Products</h3><span class="price">🏆 필수</span></div>
-      <p class="desc">검색 결과 · 상품 페이지에 <b>"Sponsored" 태그</b> 붙은 상품 광고. 일반 상품처럼 보여서 클릭률 가장 높음.</p>
-      <p class="pros"><b>좋은 점</b> 세팅 쉬움 · 초보자 가능 · 전체 광고 매출의 70% 여기서 나옴</p>
-      <p class="cons"><b>주의</b> 리스팅(제목·이미지·설명) 부실하면 클릭해도 안 팔림</p>
+      <div class="logo-row"><h3>Sponsored Products</h3><span class="price">🏆 이것만 하기</span></div>
+      <p class="desc">사람이 검색했을 때 <b>일반 상품처럼 위쪽에 뜨는 광고</b>. 옆에 조그맣게 "Sponsored" 라고 붙어요.</p>
+      <p class="easy">"비타민 미스트" 검색하면 우리 상품이 결과 첫 줄에 뜨게 하는 광고. 제일 많이 팔림.</p>
     </div>
 
     <div class="card">
-      <div class="logo-row"><h3>Sponsored Brands</h3><span class="price">브랜드 등록 후</span></div>
-      <p class="desc">검색 결과 상단에 <b>브랜드 로고 + 상품 여러 개 배너</b>. 브랜드 인지도용.</p>
-      <p class="pros"><b>좋은 점</b> 상단 노출 · 브랜드 각인</p>
-      <p class="cons"><b>주의</b> 브랜드 등록(Brand Registry) 필요 · 초기엔 스킵</p>
+      <div class="logo-row"><h3>Sponsored Brands</h3><span class="price">나중에</span></div>
+      <p class="desc">검색결과 <b>제일 위에 큰 배너</b>. 브랜드 로고랑 상품 여러 개 같이 나옴.</p>
+      <p class="easy">"Beehive 브랜드예요!" 알리는 큰 간판 광고. 브랜드 정식 등록 후에 가능.</p>
     </div>
 
     <div class="card">
-      <div class="logo-row"><h3>Sponsored Display</h3><span class="price">고급</span></div>
-      <p class="desc">아마존 <b>밖의 사이트(구글·페북 등)에도</b> 리타겟팅 광고. 리마케팅용.</p>
-      <p class="pros"><b>좋은 점</b> 이탈 고객 재유입</p>
-      <p class="cons"><b>주의</b> 데이터 쌓인 후에나 의미 있음 · 초기엔 스킵</p>
+      <div class="logo-row"><h3>Sponsored Display</h3><span class="price">나중에</span></div>
+      <p class="desc">아마존 <b>바깥 사이트(구글·페북 등)에도</b> 우리 광고가 따라다니게.</p>
+      <p class="easy">한 번 우리 상품 봤던 사람한테 "다시 보러 오세요!" 계속 따라다니는 광고. 데이터 쌓인 후에.</p>
     </div>
   </div>
 
   <p style="margin-top:18px;font-size:14.5px;color:var(--muted)">
-    <b>결론:</b> 초기 3개월은 <b>Sponsored Products 하나만</b> 집중. 예산도 여기 몰아넣음. Brands·Display 는 매출 나오고 브랜드 등록 끝나면 그때 검토.
+    <b>정리:</b> 처음 3개월은 <b>Sponsored Products 딱 하나</b>. 광고비 전부 여기 쓰세요. 나머지 둘은 나중에 매출 나오면 그때 검토해요.
   </p>
 </section>
 
 <!-- ─────────────────────────── 3. 3단계 로드맵 ─────────────────────────── -->
 <section>
-  <h2>3 · 3단계 실행 로드맵<small>10월 초 시작 기준 · 각 단계마다 목표가 달라요</small></h2>
+  <h2>3 · 어떤 순서로 해요? (3단계)<small>10월 초 시작 기준 · 단계마다 목표가 달라요</small></h2>
+
+  <div class="analogy">
+    <span class="tag">💡 비유</span>
+    <b>새 학기 자리 배정</b> 생각해보세요. (1) 준비: 교실 청소·책상 정리 · (2) 처음 2주: 선생님이 자리 알아서 배정(=자동 모드로 아마존이 알아서 검색어 매칭) · (3) 2주 후: 잘 맞는 짝꿍 찾으면 그 자리 고정(=잘 팔리는 검색어에만 집중). 이 순서예요.
+  </div>
 
   <div class="phase">
-    <div class="tag">PHASE 1 · 준비 (9월 하순)</div>
-    <h3>리스팅 최적화 + 리뷰 씨앗 뿌리기</h3>
-    <div class="period">광고 태우기 전 필수 · 이거 안 하면 광고비 그냥 날림</div>
+    <div class="tag">1단계 · 준비 (9월 하순)</div>
+    <h3>상품 페이지 잘 꾸미기 + 후기 씨앗 뿌리기</h3>
+    <div class="period">광고 태우기 전에 반드시 · 이거 안 하면 광고비 그냥 날려요</div>
     <ul>
-      <li><b>제목(Title)</b> — 브랜드명 + 핵심 키워드 + 특징 + 용량 (최대 200자). 예: <span style="font-family:ui-monospace,monospace;font-size:13px">"Beehive Vitamin Face Mist Hydrating Toner Spray, Vitamin C, Korean K-Beauty, 100ml"</span></li>
-      <li><b>불릿포인트 5개</b> — 소비자 관점 이득(benefit) 중심. "함유량 20%" (X) → "촉촉함이 8시간 지속" (O)</li>
-      <li><b>이미지 7장</b> — 메인 흰배경(필수) · 사용 씬 · 성분 · 크기 비교 · 라이프스타일 · 인포그래픽 · 텍스트 오버레이</li>
-      <li><b>A+ Content</b> — 브랜드 스토리 · 성분 상세 · 사용법. 무료. 브랜드 등록 후 가능</li>
-      <li><b>리뷰 씨앗</b> — Vine 프로그램(상품당 $200쯤, 30개 리뷰 상한) · 지인 실사용 후기 · 기존 국내 고객 초대</li>
+      <li><b>상품 제목</b> — 브랜드 + 핵심 단어 + 특징 + 용량 순서. 예: <span style="font-family:ui-monospace,monospace;font-size:13px">"Beehive Vitamin Face Mist, Korean K-Beauty, 100ml"</span></li>
+      <li><b>특징 5줄 (불릿포인트)</b> — 성분 자랑보다 <b>손님한테 뭐가 좋은지</b>. "비타민 C 20% 함유"(X) → "촉촉함이 8시간 지속"(O)</li>
+      <li><b>사진 7장</b> — 흰 배경 메인 사진(필수) · 사용하는 모습 · 성분표 · 크기 비교 · 라이프스타일 · 인포그래픽 · 글자 넣은 사진</li>
+      <li><b>A+ 콘텐츠</b> — 상품 페이지 아래쪽에 <b>브랜드 스토리·성분·사용법을 예쁘게 꾸밀 수 있는 공간</b>. 무료. 브랜드 등록 후 가능</li>
+      <li><b>후기 씨앗 뿌리기</b> — 아마존 공식 후기단(Vine · 상품당 약 30만 원) · 지인 실사용 · 기존 국내 손님 초대</li>
     </ul>
   </div>
 
   <div class="phase rec">
-    <div class="tag">PHASE 2 · 발견 (10월 1~2주차)</div>
-    <h3>Auto 캠페인 2주 돌리기 (데이터 수집)</h3>
-    <div class="period">🏆 여기가 핵심 · 아마존이 알아서 어울리는 검색어를 뿌려줌</div>
-    <p>Auto 캠페인은 <b>키워드를 직접 안 넣어도</b> 아마존이 리스팅 내용을 읽어서 "이런 검색어에 뜨면 될 것 같음" 하고 자동 매칭. 이걸 <b>2주 돌린 후 검색어 리포트(Search Term Report)</b> 를 뽑으면 → 실제로 <b>어떤 키워드에서 클릭·전환이 났는지</b> 데이터가 나옴.</p>
+    <div class="tag">2단계 · 발견 (10월 1~2주차)</div>
+    <h3>자동 모드로 2주 돌리기 (데이터 모으기)</h3>
+    <div class="period">🏆 여기가 진짜 중요 · 아마존이 알아서 어울리는 검색어 골라줌</div>
+    <p><b>자동 모드(Auto Campaign)</b> = 우리가 검색어 안 넣어도 아마존이 상품 설명 읽고 "이런 검색어에 뜨면 될 것 같음" 하고 <b>알아서 매칭</b>해줘요. 이걸 2주 돌리면 → <b>어떤 검색어에서 실제로 사람들이 클릭하고 샀는지</b> 데이터가 쌓여요.</p>
+    <div class="analogy" style="margin:14px 0">
+      <span class="tag">💡 비유</span>
+      새 학기 첫날 <b>선생님이 짝꿍 랜덤 배정</b>하는 것과 비슷. 2주 지나면 "누구랑 누구는 잘 맞더라" 알게 되잖아요. 그 데이터로 다음 단계 진행.
+    </div>
     <ul>
-      <li><b>캠페인 타입</b>: Sponsored Products · Auto Targeting</li>
-      <li><b>일일 예산</b>: 상품당 $10 (2종 = $20/일)</li>
-      <li><b>입찰가</b>: Amazon 추천치 그대로 (보통 $0.75~$1.50)</li>
-      <li><b>기간</b>: 최소 2주 (7일도 안 됨 · 데이터 부족)</li>
+      <li><b>캠페인 종류</b>: Sponsored Products · Auto Targeting</li>
+      <li><b>하루 예산</b>: 상품 1개당 약 1만 4천 원 (2개 = 하루 2만 8천 원)</li>
+      <li><b>입찰가</b>: 아마존이 추천해주는 금액 그대로 (보통 1,000~2,000원)</li>
+      <li><b>기간</b>: 최소 2주 (1주는 부족 · 데이터 안 쌓임)</li>
     </ul>
   </div>
 
   <div class="phase">
-    <div class="tag">PHASE 3 · 정타 (10월 3~4주차 이후)</div>
-    <h3>Manual 캠페인 · 확정 키워드에 집중 입찰</h3>
-    <div class="period">Auto 에서 잘 나온 키워드를 · Manual 로 옮겨서 · 입찰가 올려 상단 노출</div>
-    <p>Auto 캠페인 검색어 리포트에서 <b>"클릭 많고 판매도 난 검색어 Top 10"</b> 를 뽑아서 → Manual 캠페인 신규 생성 → 그 키워드들만 정확히 입찰. Match Type 은 3종 병행:</p>
+    <div class="tag">3단계 · 정타 (10월 3~4주차 이후)</div>
+    <h3>수동 모드로 · 잘 팔리는 검색어에만 집중</h3>
+    <div class="period">자동 모드에서 잘 나온 검색어를 · 수동 모드로 옮기고 · 돈 더 써서 위로 올림</div>
+    <p>2주 자동으로 돌린 뒤 <b>검색어 리포트(Search Term Report)</b> 를 열면 → 어떤 검색어에서 클릭 났는지 · 어떤 검색어에서 실제로 팔렸는지 다 나와요. 여기서 <b>"잘 팔린 검색어 Top 10"</b> 만 뽑아서 → 수동 모드 캠페인에 넣고 → 그 검색어들에만 집중 광고.</p>
+    <p style="margin-top:10px"><b>검색어 매칭 방식 3가지</b> 병행:</p>
     <ul>
-      <li><b>Exact Match (정확 일치)</b> — 검색어가 완전히 일치할 때만. 전환율 가장 높음. 입찰가 가장 높게</li>
-      <li><b>Phrase Match (구문 일치)</b> — 검색어에 해당 구문이 포함될 때. 중간</li>
-      <li><b>Broad Match (광범위)</b> — 유사어까지 포함. 신규 키워드 발굴용. 입찰가 낮게</li>
+      <li><b>정확 일치 (Exact)</b> — 딱 그 단어로 검색했을 때만 광고. 제일 확실 · 돈 가장 많이 씀</li>
+      <li><b>구문 일치 (Phrase)</b> — 검색어에 그 구문이 포함되면 광고. 중간</li>
+      <li><b>넓게 일치 (Broad)</b> — 비슷한 단어까지 다 잡음. 새 검색어 발굴용 · 저렴하게</li>
     </ul>
-    <p style="margin-top:10px;font-size:14px;color:var(--muted)"><b>Negative Keywords(제외 키워드)도 필수</b> — Auto 에서 "클릭은 나는데 안 팔리는 키워드"는 Manual에서 제외로 넣어서 광고비 절약.</p>
+    <p style="margin-top:10px;font-size:14px;color:var(--muted)"><b>제외 검색어(Negative Keywords)도 꼭 챙기기</b> — "클릭은 나는데 안 팔리는 검색어" 는 제외 리스트에 넣어야 광고비 아껴요.</p>
   </div>
 </section>
 
 <!-- ─────────────────────────── 4. 예산 배분 ─────────────────────────── -->
 <section>
-  <h2>4 · 예산 배분 & 입찰가 세팅<small>50~80만 원(약 $360~$580) 기준</small></h2>
+  <h2>4 · 돈은 얼마씩 나눠 써요?<small>50~80만 원을 어떻게 쪼갤지</small></h2>
 
-  <h3>월 예산을 하루 예산으로 쪼개기</h3>
+  <div class="analogy">
+    <span class="tag">💡 비유</span>
+    <b>한 달 용돈 50~80만 원</b>을 하루하루 나눠 쓰는 거예요. 하루에 왕창 쓰면 며칠 만에 다 떨어져요. 그래서 <b>매일 얼마까지만 쓸지 상한선</b>을 정해두는 거예요. 상한 도달하면 그날 광고 자동 멈춤.
+  </div>
+
+  <h3>한 달 예산을 하루 예산으로 쪼개기</h3>
   <table class="budget">
     <thead>
-      <tr><th>시나리오</th><th>월 예산</th><th>하루 예산</th><th>상품당 하루</th><th>비고</th></tr>
+      <tr><th>선택지</th><th>한 달 예산</th><th>하루 예산</th><th>상품 하나당 하루</th><th>비고</th></tr>
     </thead>
     <tbody>
       <tr>
-        <td>보수적</td>
-        <td class="num">50만 원 (~$360)</td>
-        <td class="num">$12</td>
-        <td class="num">$6</td>
-        <td>테스트용 · 데이터 부족 가능</td>
+        <td>안전하게</td>
+        <td class="num">50만 원</td>
+        <td class="num">1만 7천 원</td>
+        <td class="num">8천 500원</td>
+        <td>테스트용 · 데이터 조금 부족할 수도</td>
       </tr>
       <tr>
-        <td class="mono"><b>권장</b></td>
-        <td class="num">65만 원 (~$470)</td>
-        <td class="num">$15</td>
-        <td class="num">$7.5</td>
-        <td>Auto 2주 + Manual 2주 균형</td>
+        <td class="mono"><b>추천</b></td>
+        <td class="num">65만 원</td>
+        <td class="num">2만 1천 원</td>
+        <td class="num">1만 원</td>
+        <td>자동 2주 + 수동 2주 균형 좋음</td>
       </tr>
       <tr>
-        <td>공격적</td>
-        <td class="num">80만 원 (~$580)</td>
-        <td class="num">$19</td>
-        <td class="num">$9.5</td>
+        <td>적극적으로</td>
+        <td class="num">80만 원</td>
+        <td class="num">2만 7천 원</td>
+        <td class="num">1만 3천 원</td>
         <td>초기 상단 노출 밀어붙임</td>
       </tr>
     </tbody>
     <tfoot>
-      <tr><td colspan="5">환율 1,380원/$ 가정 · 실제 결제는 카드사 환율 적용</td></tr>
+      <tr><td colspan="5">환율 1,380원/달러 기준 · 실제는 카드사 환율 적용</td></tr>
     </tfoot>
   </table>
 
-  <h3>단계별 예산 분배 (권장 시나리오 $15/일 기준)</h3>
+  <h3>주차별로 어떻게 나눠 쓸지 (추천 65만 원 기준)</h3>
   <table class="budget">
     <thead>
-      <tr><th>주차</th><th>Auto 캠페인</th><th>Manual 캠페인</th><th>비고</th></tr>
+      <tr><th>주차</th><th>자동 모드</th><th>수동 모드</th><th>왜?</th></tr>
     </thead>
     <tbody>
-      <tr><td>1~2주차</td><td class="num">$15/일 (100%)</td><td class="num">-</td><td>데이터 수집만</td></tr>
-      <tr><td>3주차</td><td class="num">$8/일</td><td class="num">$7/일</td><td>Auto 축소 · Manual 시작</td></tr>
-      <tr><td>4주차 이후</td><td class="num">$5/일 (30%)</td><td class="num">$10/일 (70%)</td><td>Manual 중심 전환</td></tr>
+      <tr><td>1~2주차</td><td class="num">전액 (하루 2만 1천 원)</td><td class="num">-</td><td>데이터 모으기만</td></tr>
+      <tr><td>3주차</td><td class="num">1만 원</td><td class="num">1만 원</td><td>자동 줄이고 · 수동 시작</td></tr>
+      <tr><td>4주차 이후</td><td class="num">7천 원 (30%)</td><td class="num">1만 4천 원 (70%)</td><td>수동 중심으로 전환</td></tr>
     </tbody>
   </table>
 
-  <h3>입찰가 (Bid) 가이드</h3>
-  <ul>
-    <li><b>초기 Auto 캠페인</b> — 아마존 추천 입찰가 그대로. 보통 $0.75~$1.50 사이</li>
-    <li><b>Manual · Exact Match</b> — 추천치의 <b>1.5배</b> 로. 상단 노출 노림</li>
-    <li><b>Manual · Broad Match</b> — 추천치의 <b>0.7배</b> 로. 발굴용이라 저렴하게</li>
-    <li><b>화장품·미용 카테고리</b> — CPC(클릭당 비용)가 일반적으로 $0.80~$1.50. 뷰티 카테고리 경쟁 심해서 하한선 넘길 수 있음</li>
-  </ul>
-
   <div class="warn-box">
-    <h4>💰 손익분기 ACoS 계산 (미리 알아둬야 손해 안 봄)</h4>
-    <p><b>판매가 $9.99</b> 에서 아마존 수수료(15%) + FBA 물류비(약 $3~4) + 원가 = 대략 마진 <b>25~35%</b> 로 가정. 그러면 <b>손익분기 ACoS = 25~35%</b>. 이 이상 나오면 광고 태울수록 손해.</p>
-    <p style="margin-top:10px"><b>목표 ACoS: 20~25%</b> (수익 나는 지점). 초기 3개월은 30~40% 나와도 리뷰·랭킹 확보 투자로 인정. 3개월 후에도 40% 넘으면 리스팅·가격 재검토 필요.</p>
+    <h4>💰 광고비 얼마까지 써도 되는지 (미리 알아둬야 손해 안 봐요)</h4>
+    <p>9,900원짜리 상품에서 <b>아마존 수수료(15%) + 배송비 + 원가</b> 빼면 남는 돈이 대략 <b>2,500~3,500원</b> 이에요. 즉 상품 하나 팔릴 때마다 <b>광고비를 2,500~3,500원 이하로 써야</b> 손해 안 남.</p>
+    <p style="margin-top:10px"><b>이걸 ACoS 로 표현하면 25~35%.</b> 이 숫자 이상 나오면 팔면 팔수록 손해라는 뜻. 자세한 건 6장에서 설명할게요.</p>
+    <p style="margin-top:10px"><b>목표:</b> 3개월 이내 ACoS 25% 이하. 처음 한 달은 30~40% 나와도 후기·랭킹 확보 투자로 인정. 3개월 넘어도 40% 이상이면 상품 페이지·가격 다시 봐야 함.</p>
   </div>
 </section>
 
 <!-- ─────────────────────────── 5. 키워드 찾기 ─────────────────────────── -->
 <section>
-  <h2>5 · 키워드 찾는 방법<small>비타민 미스트·파우더 워시 실제 예시로</small></h2>
+  <h2>5 · 어떤 검색어로 광고해요?<small>돈 안 들이고 검색어 찾는 4가지 방법</small></h2>
+
+  <div class="analogy">
+    <span class="tag">💡 비유</span>
+    <b>친구들이 우리 문방구를 뭐라고 부르는지 알아내는 것</b>과 같아요. "예쁜 학용품 파는 데" 라고 부르면 그 단어로 광고. "싼 문구점" 이라고 부르면 그 단어. 사람들 <b>진짜 검색어를 찾아서</b> 광고에 넣는 거예요.
+  </div>
 
   <div class="steps">
     <ol>
-      <li><b>Amazon 검색창 자동완성 (무료)</b><small>아마존 사이트에서 "vitamin mist", "vitamin c toner", "hydrating spray" 쳐보면 나오는 자동완성 = 실제 사람들 검색어. 캡처해서 리스트업</small></li>
-      <li><b>경쟁 상품 리스팅 훔쳐보기 (무료)</b><small>비슷한 상품 Top 10 을 열어서 제목·불릿포인트에 쓴 단어 수집. 그들이 쓴 키워드 = 검증된 키워드</small></li>
-      <li><b>Helium 10 크롬 확장 (무료 티어)</b><small>chrome.google.com 에서 "Helium 10" 검색 · 설치 · 무료 가입. 아마존 상품 페이지에서 확장 켜면 "이 상품이 뜨는 키워드 · 월간 검색량" 볼 수 있음. 무료로 하루 몇 회 조회 가능</small></li>
-      <li><b>Jungle Scout Keyword Scout (유료 $49/월)</b><small>필수는 아님. 예산 여유 있으면 한 달만 결제해서 데이터 뽑고 해지</small></li>
-      <li><b>아마존 Brand Analytics (브랜드 등록 후 무료)</b><small>Brand Registry 완료 후 Seller Central 내에서 실제 아마존 검색량 랭킹 데이터 무료 열람. 가장 정확한 소스</small></li>
+      <li><b>아마존 검색창 자동완성 보기 (무료)</b><small>아마존 사이트 검색창에 "vitamin mist" 치면 아래에 자동완성으로 뜨는 단어들 = <b>실제로 사람들이 많이 검색하는 단어</b>. 이거 그대로 캡처해서 리스트 만들기</small></li>
+      <li><b>비슷한 상품 페이지 훔쳐보기 (무료)</b><small>비슷한 상품 인기 Top 10 을 하나씩 열어서 · 제목·특징에 쓴 단어들 다 적기. 그들이 쓴 단어 = 이미 검증된 단어</small></li>
+      <li><b>Helium 10 크롬 확장 (무료 버전)</b><small>구글에서 "Helium 10 chrome extension" 검색 → 설치 → 무료 가입. 아마존 상품 페이지에서 이 확장 켜면 "이 상품이 어떤 검색어에 뜨는지 · 한 달 검색량 얼마인지" 알려줌. 무료로도 하루 몇 번 조회 가능</small></li>
+      <li><b>브랜드 등록 후 Brand Analytics (무료)</b><small>브랜드 정식 등록 끝나면 셀러 사이트에서 <b>진짜 아마존 검색량 데이터</b> 볼 수 있음. 가장 정확 · 하지만 브랜드 등록 완료 후에나 가능</small></li>
     </ol>
   </div>
 
-  <h3>비타민 미스트 · 예상 키워드 시드 (초안)</h3>
+  <h3>비타민 미스트 · 예상 검색어 초안</h3>
   <ul>
-    <li><b>핵심 키워드</b>: vitamin c mist, face mist, hydrating spray, korean toner</li>
-    <li><b>롱테일</b>: vitamin c face mist for dry skin, korean k-beauty vitamin mist, glow face spray</li>
-    <li><b>브랜드+카테고리</b>: k-beauty face mist, korean skincare mist</li>
+    <li><b>핵심</b>: vitamin c mist, face mist, hydrating spray, korean toner</li>
+    <li><b>긴 구문</b>: vitamin c face mist for dry skin, korean k-beauty vitamin mist</li>
+    <li><b>K-뷰티 강조</b>: k-beauty face mist, korean skincare mist</li>
   </ul>
 
-  <h3>프리타임 파우더 워시 14개입 · 예상 키워드 시드</h3>
+  <h3>프리타임 파우더 워시 14개입 · 예상 검색어 초안</h3>
   <ul>
-    <li><b>핵심 키워드</b>: powder wash, enzyme powder cleanser, korean face wash</li>
-    <li><b>롱테일</b>: individual packet face wash travel, enzyme powder cleanser exfoliating, korean powder wash single use</li>
-    <li><b>차별점 강조</b>: travel size face wash, disposable face cleanser sachet</li>
+    <li><b>핵심</b>: powder wash, enzyme powder cleanser, korean face wash</li>
+    <li><b>긴 구문</b>: individual packet face wash travel, powder cleanser exfoliating</li>
+    <li><b>차별점 강조</b>: travel size face wash, single use face cleanser sachet</li>
   </ul>
 
   <p style="font-size:13px;color:var(--muted);margin-top:14px">
-    ※ 위 키워드는 <b>초안</b>이에요. 실제 상품 이미지·성분·타겟 확정 후 · Helium 10 로 월간 검색량·경쟁도 확인해서 20~30개로 좁힐 예정.
+    ※ 위 검색어는 <b>초안</b>이에요. 실제 상품 사진·성분 확정 후 · Helium 10 로 검색량·경쟁 정도 확인해서 20~30개로 좁힐 예정.
   </p>
 </section>
 
 <!-- ─────────────────────────── 6. 성과 지표 ─────────────────────────── -->
 <section>
-  <h2>6 · 성과 지표 읽는 법<small>주 1회 이 4개만 보시면 돼요</small></h2>
+  <h2>6 · 잘 되고 있는지 어떻게 알아요?<small>주 1회 이 4가지만 보면 돼요</small></h2>
+
+  <div class="analogy">
+    <span class="tag">💡 비유</span>
+    <b>학교 성적표</b> 같은 거예요. 4과목 점수 보면 우리 광고가 <b>잘 굴러가는지 · 어디가 문제인지</b> 알 수 있어요. 4과목: ① 매출 대비 광고비 비율 · ② 광고 본 사람 중 클릭 비율 · ③ 클릭한 사람 중 산 비율 · ④ 전체 매출 대비 광고비 비율.
+  </div>
 
   <div class="metric-grid">
     <div class="metric">
       <div class="m-name">ACoS</div>
-      <div class="m-full">Advertising Cost of Sales (광고매출비용)</div>
-      <div class="m-desc">광고비 ÷ 광고매출. <b>낮을수록 좋음</b>. 광고 $1 써서 $4 팔면 ACoS = 25%.</div>
-      <div class="m-benchmark">목표: <b>20~25%</b> · 손익분기: 25~35%</div>
+      <div class="m-full">Advertising Cost of Sales · 광고매출비용률</div>
+      <div class="m-desc"><b>광고비 ÷ 광고로 난 매출.</b> 낮을수록 좋아요.</div>
+      <div class="m-easy"><b>쉽게 말하면:</b> 광고에 만 원 써서 4만 원어치 팔면 = 25%. "만 원 벌려고 광고비 얼마 썼나?"</div>
+      <div class="m-benchmark">🎯 목표: <b>20~25%</b> · 손익분기: 25~35%</div>
     </div>
 
     <div class="metric">
       <div class="m-name">CTR</div>
-      <div class="m-full">Click-Through Rate (클릭률)</div>
-      <div class="m-desc">노출 대비 클릭 비율. <b>높을수록 좋음</b>. 낮으면 <b>이미지·제목이 매력 없다는 뜻</b>.</div>
-      <div class="m-benchmark">목표: <b>0.4% 이상</b> · 뷰티 평균 ~0.5%</div>
+      <div class="m-full">Click-Through Rate · 클릭률</div>
+      <div class="m-desc"><b>광고 본 사람 중 클릭한 비율.</b> 높을수록 좋아요.</div>
+      <div class="m-easy"><b>쉽게 말하면:</b> 낮으면 "포스터 봐도 아무도 안 다가옴" = 사진·제목이 매력 없다는 뜻</div>
+      <div class="m-benchmark">🎯 목표: <b>0.4% 이상</b> · 뷰티 평균 ~0.5%</div>
     </div>
 
     <div class="metric">
       <div class="m-name">CVR</div>
-      <div class="m-full">Conversion Rate (전환율)</div>
-      <div class="m-desc">클릭 대비 구매 비율. <b>높을수록 좋음</b>. 낮으면 <b>가격·리뷰·상세페이지가 부족</b>하다는 뜻.</div>
-      <div class="m-benchmark">목표: <b>10% 이상</b> · 신규 셀러 5~8% 정상</div>
+      <div class="m-full">Conversion Rate · 전환율</div>
+      <div class="m-desc"><b>클릭한 사람 중 실제로 산 비율.</b> 높을수록 좋아요.</div>
+      <div class="m-easy"><b>쉽게 말하면:</b> 낮으면 "가게 들어와서 둘러보고 그냥 나감" = 가격이나 후기가 부족하다는 뜻</div>
+      <div class="m-benchmark">🎯 목표: <b>10% 이상</b> · 초보 셀러 5~8% 정상</div>
     </div>
 
     <div class="metric">
       <div class="m-name">TACoS</div>
-      <div class="m-full">Total ACoS (전체 매출 대비)</div>
-      <div class="m-desc">광고비 ÷ <b>전체 매출(광고+오가닉)</b>. <b>내려가면 오가닉이 살아난다는 시그널</b>.</div>
-      <div class="m-benchmark">3개월 후 10~15% 로 낮아지면 성공</div>
+      <div class="m-full">Total ACoS · 전체 매출 대비 광고비</div>
+      <div class="m-desc"><b>광고비 ÷ 전체 매출(광고 + 공짜 검색).</b> 내려가는 게 좋은 신호.</div>
+      <div class="m-easy"><b>쉽게 말하면:</b> 이 숫자가 내려간다 = 광고 없어도 팔리기 시작했다는 뜻. 우리 최종 목표</div>
+      <div class="m-benchmark">🎯 3개월 후 10~15% 로 낮아지면 성공</div>
     </div>
   </div>
 
   <p style="margin-top:18px;font-size:14.5px;color:var(--muted)">
-    <b>해석 순서:</b> CTR 먼저 → CVR → ACoS → TACoS. CTR 낮으면 이미지·제목 · CVR 낮으면 가격·리뷰 · ACoS 만 높으면 입찰가·키워드 조정.
+    <b>이 순서로 보세요:</b> CTR → CVR → ACoS → TACoS.<br/>
+    CTR 낮으면 → <b>사진·제목 손보기.</b> CVR 낮으면 → <b>가격·후기 손보기.</b> ACoS 만 높으면 → <b>입찰가·검색어 조정.</b>
   </p>
 </section>
 
 <!-- ─────────────────────────── 7. 체크리스트 ─────────────────────────── -->
 <section>
-  <h2>7 · 언니가 직접 챙길 체크리스트<small>이 문서 최종본 만들기 전 확인 필요</small></h2>
+  <h2>7 · 언니가 미리 챙길 것<small>이 문서 최종본 만들기 전에 확인 필요</small></h2>
 
   <h3>계정 & 준비 (9월)</h3>
   <div class="checklist">
     <ul>
-      <li><b>Seller Central 계정 로그인 정상화</b> — Individual 인지 Professional($39.99/월) 인지 확인 필요</li>
-      <li><b>Brand Registry (브랜드 등록) 진행 여부</b> — 미국 상표권 있어야 함. 없으면 A+ Content · Sponsored Brands 못 씀</li>
-      <li><b>FBA 발송 · 재고 인바운드 확정 일자</b> — 광고는 재고 In-Stock 상태여야 노출됨</li>
-      <li><b>Vine 프로그램 예산 확보</b> — 상품당 약 $200 (별도 예산, 광고비와 분리)</li>
+      <li><b>아마존 셀러 계정 로그인 정상화</b> — 개인용(Individual) 인지 · 사업자용(Professional · 월 39.99달러) 인지 확인</li>
+      <li><b>브랜드 등록(Brand Registry) 진행 여부</b> — 미국 상표권 있어야 함. 없으면 A+ 콘텐츠 · 배너 광고 못 씀</li>
+      <li><b>상품 창고 입고 예정일 확정</b> — 광고는 <b>재고 있을 때만</b> 뜸. 재고 떨어지면 광고 자동 정지</li>
+      <li><b>Vine 후기단 예산</b> — 상품 하나당 약 30만 원 (광고비랑 별도 예산)</li>
     </ul>
   </div>
 
-  <h3>리스팅 최종 확정 (9월 하순)</h3>
+  <h3>상품 페이지 완성 (9월 하순)</h3>
   <div class="checklist">
     <ul>
-      <li><b>상품 사진 7장</b> — 흰배경 메인 · 사용씬 · 인포그래픽 등</li>
-      <li><b>영문 제목·불릿포인트·A+ Content 카피</b> — 한글→영문 번역 필요</li>
-      <li><b>Backend Search Terms 250자</b> — 리스팅 뒤에서만 인식되는 숨은 키워드</li>
+      <li><b>상품 사진 7장</b> — 흰 배경 메인 · 사용 씬 · 인포그래픽 등</li>
+      <li><b>영문 제목·특징·A+ 콘텐츠 번역</b> — 한글 원본 있으면 번역 진행</li>
+      <li><b>Backend Search Terms 250자</b> — 상품 페이지 뒤에 숨은 검색어 넣는 칸. 여기 채워야 검색 노출 잘 됨</li>
     </ul>
   </div>
 
   <h3>광고 세팅 직전 (10월 초)</h3>
   <div class="checklist">
     <ul>
-      <li><b>리뷰 최소 5개 이상 · 별점 4.0 이상</b> 확보 후 광고 시작</li>
-      <li><b>결제카드 등록 & 광고 결제 방식 확인</b> — 카드 한도 · 자동결제 여부</li>
-      <li><b>ACoS 상한선 결정</b> — 몇 %까지 감수할지 사전 합의</li>
+      <li><b>후기 최소 5개 이상 · 별점 4점 이상</b> 확보 후 광고 시작</li>
+      <li><b>결제카드 등록 · 자동결제 방식 확인</b> — 카드 한도 · 광고비 결제 방식</li>
+      <li><b>ACoS 몇 %까지 감수할지 사전 결정</b> — 상한 정해두면 자동으로 광고 조절 가능</li>
     </ul>
   </div>
 </section>
@@ -432,33 +450,35 @@
 <!-- ─────────────────────────── 용어 사전 ─────────────────────────── -->
 <section>
   <div class="glossary">
-    <h3>📖 용어 사전</h3>
+    <h3>📖 용어 사전 (한 번에 정리)</h3>
     <dl>
-      <dt>PPC</dt><dd>Pay-Per-Click · 클릭당 과금 광고</dd>
-      <dt>ASIN</dt><dd>Amazon Standard Identification Number · 아마존 상품 고유번호</dd>
-      <dt>SKU</dt><dd>Stock Keeping Unit · 재고 관리 단위</dd>
-      <dt>FBA</dt><dd>Fulfillment by Amazon · 아마존 물류 대행</dd>
-      <dt>CPC</dt><dd>Cost Per Click · 클릭 1회당 비용</dd>
-      <dt>Bid</dt><dd>입찰가 · 클릭 1회에 최대 얼마 낼지 설정</dd>
-      <dt>Impression</dt><dd>노출 · 광고가 화면에 뜬 횟수</dd>
-      <dt>Organic</dt><dd>오가닉 · 광고 아닌 자연 검색 노출</dd>
-      <dt>Listing</dt><dd>리스팅 · 상품 페이지 (제목·이미지·설명)</dd>
-      <dt>Vine</dt><dd>아마존 공식 리뷰 프로그램 (신뢰 리뷰어 초대)</dd>
+      <dt>PPC</dt><dd>Pay-Per-Click · <b>클릭할 때마다 돈 내는 광고</b> 방식</dd>
+      <dt>ASIN</dt><dd>아마존 상품 고유번호 (우리나라 바코드 같은 것)</dd>
+      <dt>SKU</dt><dd>재고 관리 번호 (셀러가 자기 상품에 붙이는 번호)</dd>
+      <dt>FBA</dt><dd>Fulfillment by Amazon · <b>아마존이 대신 보관·포장·배송해주는 서비스</b></dd>
+      <dt>CPC</dt><dd>Cost Per Click · <b>클릭 한 번당 얼마 냈는지</b></dd>
+      <dt>Bid</dt><dd>입찰가 · 클릭 한 번에 <b>최대 얼마까지 낼지 정하는 금액</b></dd>
+      <dt>Impression</dt><dd>노출 · <b>광고가 화면에 뜬 횟수</b> (봤든 안 봤든)</dd>
+      <dt>Organic</dt><dd>오가닉 · <b>광고 아닌 자연 검색결과</b>로 노출된 것</dd>
+      <dt>Listing</dt><dd>리스팅 · <b>상품 페이지</b> (제목·이미지·설명 다 합친 것)</dd>
+      <dt>Vine</dt><dd>아마존이 인정한 <b>후기 전문가</b>들에게 상품 보내서 후기 받는 프로그램</dd>
+      <dt>Auto</dt><dd>자동 모드 · <b>아마존이 검색어 알아서 매칭</b>해주는 방식</dd>
+      <dt>Manual</dt><dd>수동 모드 · <b>내가 검색어 직접 골라서</b> 광고하는 방식</dd>
     </dl>
   </div>
 </section>
 
 <!-- ─────────────────────────── 참고 자료 ─────────────────────────── -->
 <section>
-  <h2>8 · 이 정보 어디서 봤어요?<small>혹시 직접 확인하고 싶으시면</small></h2>
+  <h2>8 · 이 정보 어디서 봤어요?<small>직접 확인하고 싶으시면</small></h2>
 
   <div class="refs">
     <ul>
-      <li><b>Amazon Advertising 공식 학습 센터</b> → <a href="https://advertising.amazon.com/learn" target="_blank">advertising.amazon.com/learn</a></li>
-      <li><b>Amazon Ads · Sponsored Products 가이드</b> → <a href="https://advertising.amazon.com/solutions/products/sponsored-products" target="_blank">advertising.amazon.com/sponsored-products</a></li>
-      <li><b>Seller Central Help · Campaign Manager</b> → <a href="https://sellercentral.amazon.com/help" target="_blank">sellercentral.amazon.com/help</a></li>
+      <li><b>Amazon Ads 공식 학습 센터</b> → <a href="https://advertising.amazon.com/learn" target="_blank">advertising.amazon.com/learn</a></li>
+      <li><b>Amazon Ads · Sponsored Products 안내</b> → <a href="https://advertising.amazon.com/solutions/products/sponsored-products" target="_blank">advertising.amazon.com/sponsored-products</a></li>
+      <li><b>Seller Central 도움말 (캠페인 관리)</b> → <a href="https://sellercentral.amazon.com/help" target="_blank">sellercentral.amazon.com/help</a></li>
       <li><b>Helium 10 무료 크롬 확장</b> → <a href="https://www.helium10.com/tools/free/" target="_blank">helium10.com/tools/free</a></li>
-      <li><b>Amazon Vine 프로그램 소개</b> → <a href="https://sellercentral.amazon.com/help/hub/reference/GBBFYQ8Q5H88YT53" target="_blank">Seller Central Vine 안내</a></li>
+      <li><b>Amazon Vine 후기단 프로그램</b> → <a href="https://sellercentral.amazon.com/help/hub/reference/GBBFYQ8Q5H88YT53" target="_blank">Seller Central Vine 안내</a></li>
     </ul>
   </div>
 </section>
@@ -466,7 +486,7 @@
 </main>
 
 <footer>
-  Beehive Corp · 아마존 키워드 광고 가이드 (초안) · 2026-08-13 · 준비 김서현 · <a href="./index.html">← 견적서 프로그램 리서치</a>
+  Beehive Corp · 아마존 광고 가이드 (초안) · 2026-08-13 · 준비 김서현 · <a href="./index.html">← 견적서 프로그램 리서치</a>
 </footer>
 
 </body>
