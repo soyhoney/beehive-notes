@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>비하이브코퍼레이션 · 견적/CRM 툴 리서치 — 2026-08-13</title>
+<title>비하이브코퍼레이션 · 견적/CRM 툴 리서치 v2 — 2026-08-13</title>
 <style>
   :root{
     --navy:#0a1628; --navy-2:#101f34; --ink:#152031; --muted:#657386;
@@ -12,11 +12,9 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--paper);color:var(--ink);
+  body{background:var(--paper);color:var(--ink);
     font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased;line-height:1.6;word-break:keep-all;
-  }
+    -webkit-font-smoothing:antialiased;line-height:1.6;word-break:keep-all}
   a{color:var(--mint-dark);text-decoration:none;font-weight:600}
   a:hover{text-decoration:underline}
   code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#e2e8e5;color:#0e6f58;padding:1px 5px;font-size:.88em}
@@ -27,6 +25,7 @@
   header.top h1 em{color:var(--mint);font-style:normal}
   header.top .meta{color:#8ca0b6;font-size:13px;display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:ui-monospace,monospace}
   header.top .meta b{color:#e2eaf1;font-weight:600}
+  header.top .version-pill{display:inline-block;background:var(--mint);color:var(--navy);padding:3px 9px;font-family:ui-monospace,monospace;font-size:11px;font-weight:900;margin-left:12px;vertical-align:middle}
 
   main{max-width:1080px;margin:0 auto;padding:70px 28px 100px}
   section{margin-bottom:78px}
@@ -37,6 +36,13 @@
   li{font-size:14.5px;margin-bottom:6px}
 
   .lede{font-size:16px;color:var(--muted);line-height:1.75;border-left:3px solid var(--mint);padding:6px 0 6px 18px;margin-bottom:38px}
+  .lede b{color:var(--ink)}
+
+  .changelog{background:#fef4e1;border:1px solid var(--amber);padding:22px 26px;margin-bottom:40px}
+  .changelog h4{color:#8a651f;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:ui-monospace,monospace;margin-bottom:12px}
+  .changelog ul{list-style:none;padding-left:0}
+  .changelog li{padding:6px 0;font-size:13.5px;color:#5a4820;display:flex;gap:10px}
+  .changelog li b{color:#c53f3f}
 
   .req-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
   .req-grid > div{background:#fff;padding:22px}
@@ -46,23 +52,32 @@
   .req-grid li:first-child{border-top:0}
   .req-grid li::before{content:"";width:6px;height:6px;background:var(--mint-dark);border-radius:50%;flex-shrink:0;margin-top:8px}
 
-  table.compare{width:100%;border-collapse:collapse;background:#fff;font-size:13px;box-shadow:0 1px 0 var(--line)}
+  .legend{background:#fff;border:1px solid var(--line);padding:16px 20px;margin-bottom:18px;font-size:13px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+  .legend b{font-family:ui-monospace,monospace;font-weight:800;padding:2px 8px;font-size:11px}
+  .legend .l1{background:#d5f5ea;color:var(--mint-dark)}
+  .legend .l2{background:#fef0d3;color:#8a651f}
+  .legend .l3{background:#f3e0e0;color:#872020}
+
+  table.compare{width:100%;border-collapse:collapse;background:#fff;font-size:13px}
   table.compare th, table.compare td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}
   table.compare thead th{background:var(--navy);color:#fff;font-weight:700;font-size:12px;letter-spacing:.02em}
-  table.compare tbody th{background:#eef2ef;font-weight:700;color:var(--ink);font-size:12.5px;width:180px}
+  table.compare thead th small{display:block;font-weight:400;color:#8ca0b6;font-size:10px;margin-top:3px;font-family:ui-monospace,monospace}
+  table.compare tbody th{background:#eef2ef;font-weight:700;color:var(--ink);font-size:12.5px;width:200px}
   table.compare .ok{color:var(--mint-dark);font-weight:700}
   table.compare .warn{color:#c68a10;font-weight:700}
   table.compare .no{color:var(--danger);font-weight:700}
   table.compare .num{font-family:ui-monospace,monospace;font-weight:700}
-  table.compare .tier1{border-top:3px solid var(--mint)}
-  table.compare .tier2{border-top:3px solid var(--amber)}
-  table.compare .tier3{border-top:3px solid #a8b2b8}
+  .conf{display:inline-block;font-family:ui-monospace,monospace;font-size:9px;font-weight:800;padding:1px 5px;margin-left:5px;vertical-align:middle}
+  .conf.c1{background:#d5f5ea;color:var(--mint-dark)}
+  .conf.c2{background:#fef0d3;color:#8a651f}
+  .conf.c3{background:#f3e0e0;color:#872020}
 
   .verdict{background:var(--navy);color:#fff;padding:38px;margin-top:34px}
   .verdict .vlabel{color:var(--mint);letter-spacing:.1em;font-family:ui-monospace,monospace;font-size:11px;font-weight:800;text-transform:uppercase;margin-bottom:14px}
   .verdict h3{color:#fff;font-size:24px;margin-bottom:16px}
   .verdict p{color:#b6c4d1;font-size:14.5px;margin-bottom:12px}
   .verdict strong{color:var(--mint)}
+  .verdict .caveat{color:var(--amber);font-size:12px;margin-top:14px;padding-top:14px;border-top:1px solid #2c4056;font-family:ui-monospace,monospace}
 
   .steps{background:#fff;border:1px solid var(--line);padding:0}
   .steps > div{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;padding:18px 24px;border-top:1px solid var(--line)}
@@ -72,16 +87,18 @@
   .steps .who{font-size:11px;color:var(--muted);font-family:ui-monospace,monospace;text-align:right}
 
   .sources{background:#fff;border:1px solid var(--line);padding:26px 28px}
+  .sources h4{font-size:13px;color:var(--mint-dark);text-transform:uppercase;font-family:ui-monospace,monospace;letter-spacing:.08em;margin-bottom:12px;margin-top:20px}
+  .sources h4:first-child{margin-top:0}
   .sources ul{list-style:none;padding-left:0}
-  .sources li{padding:8px 0;border-top:1px solid #eef1ef;font-size:13px}
-  .sources li:first-child{border-top:0}
-  .sources li b{display:block;color:var(--ink);margin-bottom:2px}
+  .sources li{padding:6px 0;font-size:12.5px}
+  .sources li b{color:var(--ink)}
 
   footer{background:var(--navy);color:#8ba0b6;padding:26px max(28px,50vw - 540px);font-size:12px;font-family:ui-monospace,monospace}
   footer a{color:var(--mint)}
 
   @media (max-width:720px){
     .req-grid{grid-template-columns:1fr}
+    .legend{gap:12px}
     table.compare{font-size:12px}
     table.compare th, table.compare td{padding:8px 8px}
     .steps > div{grid-template-columns:1fr;gap:6px}
@@ -92,21 +109,32 @@
 <body>
 
 <header class="top">
-  <div class="eyebrow">Research Report · 2026-08-13</div>
+  <div class="eyebrow">Research Report · 2026-08-13 <span class="version-pill">v2 검증본</span></div>
   <h1>견적/CRM 툴 <em>리서치</em></h1>
   <p style="color:#c8d5e2;font-size:15.5px;max-width:640px">비하이브코퍼레이션 · 통번역 실무 견적 워크플로에 맞는 SaaS 툴 5종 비교.<br/>실제 견적서 · 요율표 · 5년치 Workpad 데이터를 근거로 요구사항 도출.</p>
   <div class="meta">
     <span><b>대상</b> 언니 · 팀원 1명 (2 seats)</span>
-    <span><b>예산</b> 월 ₩100,000 상한</span>
+    <span><b>예산</b> 월 ₩100,000 상한 (~$70)</span>
     <span><b>이관 규모</b> Workpad 5년치 800+건</span>
   </div>
 </header>
 
 <main>
 
+<div class="changelog">
+  <h4>v2 수정 사항 (v1 오류 정정)</h4>
+  <ul>
+    <li><b>Better Proposals Starter</b> 월 5건 제한 → 실제 <b>월 50건</b> (Capterra 재확인)</li>
+    <li><b>Bonsai</b> 2 users $21/mo → 실제 Essentials $38/mo, CSV import 하려면 Elite <b>$147/mo (3인 최소)</b>. 예산 초과로 사실상 탈락</li>
+    <li><b>Ignition</b> $99/mo → Solo $39(1인), <b>Core $99/mo (2인 가능)</b> · 여전히 예산 근접</li>
+    <li><b>PandaDoc</b> monthly billing $35 → 실제 <b>$29</b> (annual $19)</li>
+    <li><b>Zoho Books 한국어 UI</b> — v1 "2026-06 지원" 주장 <b>재확인 실패</b>. 공식 문서에 Korean 언급 없음. 트라이얼 실측 필요로 downgrade</li>
+  </ul>
+</div>
+
 <p class="lede">
-  이 리서치는 언니의 실제 견적서(Korea Risk Group·KCA 웨비나 2건)·2026 요율표·2020~2025 Workpad 를 파싱한 결과에서 요구사항을 뽑고, 시장의 5개 후보 툴을 3-tier 로 분류한 결과입니다.
-  실제 계정 검증은 아직 안 됐고 <b>사양·가격은 벤더 공개 자료 기준</b>이라, 최종 선택 전에 Tier 1 두 툴은 14~30일 무료 트라이얼로 실물 재현 테스트가 필요합니다.
+  이 리서치는 언니의 실제 견적서(Korea Risk Group·KCA 웨비나 2건)·2026 요율표·2020~2025 Workpad 를 파싱한 결과에서 요구사항을 뽑고, 시장의 5개 후보 툴을 비교한 결과입니다.
+  각 셀은 <b>확인 신뢰도</b>가 표시되며, 실제 계정 검증은 아직이라 최종 선택 전 Tier 1 두 툴은 트라이얼 실측 필수입니다.
 </p>
 
 <!-- ─────────────────────────── SECTION 1 ─────────────────────────── -->
@@ -155,113 +183,120 @@
 <section>
   <h2>2 · 후보 툴 비교</h2>
 
+  <div class="legend">
+    <span><b>신뢰도 라벨</b></span>
+    <span><b class="l1">벤더</b> 벤더 공식 페이지에서 확인</span>
+    <span><b class="l2">3rd</b> Capterra·G2·리뷰 요약 (원문 미확인)</span>
+    <span><b class="l3">미확인</b> 트라이얼 실측 필요</span>
+  </div>
+
   <table class="compare">
     <thead>
       <tr>
         <th></th>
-        <th class="tier1">PandaDoc<br/><small style="font-weight:400">Tier 1</small></th>
-        <th class="tier1">Better Proposals<br/><small style="font-weight:400">Tier 1</small></th>
-        <th class="tier2">Zoho Invoice + CRM<br/><small style="font-weight:400">Tier 2</small></th>
-        <th class="tier2">Bonsai<br/><small style="font-weight:400">Tier 2</small></th>
-        <th class="tier3">Ignition<br/><small style="font-weight:400">Tier 3</small></th>
+        <th>PandaDoc<br/><small>Tier 1</small></th>
+        <th>Better Proposals<br/><small>Tier 1</small></th>
+        <th>Zoho Invoice + Books<br/><small>Tier 2</small></th>
+        <th>Bonsai<br/><small>Tier 2 → 3 강등</small></th>
+        <th>Ignition<br/><small>Tier 3</small></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th>월 요금 (2 seats)</th>
-        <td class="num">Starter $38/mo<br/>(연납, 월납 $70)</td>
-        <td class="num">Starter $38/mo<br/>Premium $58/mo</td>
-        <td class="num ok">Invoice 무료<br/>Books $20/mo (3인)</td>
-        <td class="num">$21/mo (2 users)</td>
-        <td class="num">$99/mo</td>
+        <td class="num">Essentials <b>$38/mo</b> 연납<br/>($58/mo 월납)<span class="conf c2">3rd</span></td>
+        <td class="num">Starter <b>$19/mo</b><br/>Premium <b>$29/mo</b><span class="conf c2">3rd</span></td>
+        <td class="num ok">Invoice <b>무료</b> (2인, 500건/년)<br/>Books $20/mo (3인)<span class="conf c1">벤더</span></td>
+        <td class="num">Essentials <b>$38/mo</b> 연납<br/>Elite $147/mo (3인 강제)<span class="conf c1">벤더</span></td>
+        <td class="num">Solo $39 (1인)<br/>Core <b>$99/mo</b> 연납<span class="conf c2">3rd</span></td>
       </tr>
       <tr>
         <th>월 문서 발행 제한</th>
-        <td class="ok">무제한</td>
-        <td class="warn">Starter 5건 · Premium 50건</td>
-        <td class="ok">무제한</td>
-        <td class="ok">무제한</td>
-        <td class="ok">무제한</td>
+        <td class="ok">무제한<span class="conf c2">3rd</span></td>
+        <td class="warn">Starter/Premium <b>50건</b>, Enterprise 무제한<span class="conf c2">3rd</span></td>
+        <td class="ok">연 500건 (무료), 무제한 (Books)<span class="conf c1">벤더</span></td>
+        <td class="ok">무제한<span class="conf c1">벤더</span></td>
+        <td class="ok">Solo 20 clients, Core+ 무제한<span class="conf c2">3rd</span></td>
       </tr>
       <tr>
         <th>Pricing table + VAT/소계</th>
-        <td class="ok">✅ Variables 지원</td>
-        <td class="ok">✅ 기본 제공</td>
-        <td class="ok">✅ 견적서 기본</td>
-        <td class="ok">✅</td>
-        <td class="ok">✅</td>
+        <td class="ok">✅ Variables 지원<span class="conf c2">3rd</span></td>
+        <td class="ok">✅ 기본 제공<span class="conf c2">3rd</span></td>
+        <td class="ok">✅ 견적/인보이스 기본<span class="conf c1">벤더</span></td>
+        <td class="ok">✅ (Essentials+)<span class="conf c1">벤더</span></td>
+        <td class="ok">✅ 프로포절+계약<span class="conf c2">3rd</span></td>
       </tr>
       <tr>
         <th>천단위 절사 커스텀</th>
-        <td class="ok">Variable + 수식</td>
-        <td class="warn">수동 조정</td>
-        <td class="warn">수동 조정</td>
-        <td class="warn">수동 조정</td>
-        <td class="warn">수동 조정</td>
+        <td class="warn">Variable 지원하지만 footer 수식은 미확인<span class="conf c3">미확인</span></td>
+        <td class="warn">수동 조정<span class="conf c3">미확인</span></td>
+        <td class="warn">수동 조정<span class="conf c3">미확인</span></td>
+        <td class="warn">수동 조정<span class="conf c3">미확인</span></td>
+        <td class="warn">수동 조정<span class="conf c3">미확인</span></td>
       </tr>
       <tr>
         <th>제품 카탈로그 CSV import</th>
-        <td class="ok">✅ 공식 지원</td>
-        <td class="no">❌ 미지원</td>
-        <td class="ok">✅ (Books)</td>
-        <td class="warn">한정적</td>
-        <td class="warn">한정적</td>
+        <td class="ok">✅ 10만개, 30MB, UTF-8<span class="conf c1">벤더</span></td>
+        <td class="no">❌ 미지원 (Zapier 우회)<span class="conf c2">3rd</span></td>
+        <td class="ok">✅ (Books 강력)<span class="conf c1">벤더</span></td>
+        <td class="no">❌ Elite 전용 = $147/mo<span class="conf c1">벤더</span></td>
+        <td class="warn">서비스 카탈로그 있음, CSV import 미확인<span class="conf c3">미확인</span></td>
       </tr>
       <tr>
         <th>연락처 CSV import</th>
-        <td class="ok">✅</td>
-        <td class="warn">Zapier 우회</td>
-        <td class="ok">✅ 강력 (CRM)</td>
-        <td class="ok">✅</td>
-        <td class="ok">✅</td>
+        <td class="ok">✅<span class="conf c2">3rd</span></td>
+        <td class="warn">Zapier 우회<span class="conf c2">3rd</span></td>
+        <td class="ok">✅ 강력 (CRM)<span class="conf c1">벤더</span></td>
+        <td class="warn">Elite 전용<span class="conf c1">벤더</span></td>
+        <td class="ok">✅ (Core+)<span class="conf c2">3rd</span></td>
       </tr>
       <tr>
-        <th>한글 지원</th>
-        <td class="warn">폰트 CSS import 로 가능 (테스트 필요)</td>
-        <td class="warn">미확인 (실측 필요)</td>
-        <td class="ok">✅ Books 2026-06 부터 한국어 UI</td>
-        <td class="warn">미확인</td>
-        <td class="warn">미확인</td>
+        <th>한글 UI · 렌더링</th>
+        <td class="warn">CSS 폰트 import 로 가능<span class="conf c3">미확인</span></td>
+        <td class="warn">미확인<span class="conf c3">미확인</span></td>
+        <td class="warn">Zoho 20+개 언어 지원하지만 <b>Korean 명시 없음</b><span class="conf c3">미확인</span></td>
+        <td class="warn">미확인<span class="conf c3">미확인</span></td>
+        <td class="warn">미확인<span class="conf c3">미확인</span></td>
       </tr>
       <tr>
         <th>다중 통화 (KRW/USD)</th>
-        <td class="ok">✅</td>
-        <td class="ok">✅</td>
-        <td class="ok">✅</td>
-        <td class="ok">✅</td>
-        <td class="ok">✅</td>
+        <td class="ok">✅<span class="conf c2">3rd</span></td>
+        <td class="ok">✅<span class="conf c2">3rd</span></td>
+        <td class="ok">✅ 150+ 통화<span class="conf c1">벤더</span></td>
+        <td class="ok">Essentials+<span class="conf c1">벤더</span></td>
+        <td class="ok">✅<span class="conf c2">3rd</span></td>
       </tr>
       <tr>
         <th>e-Signature</th>
-        <td class="ok">✅ 무제한</td>
-        <td class="ok">✅ 기본</td>
-        <td class="warn">별도 (Sign)</td>
-        <td class="ok">✅</td>
-        <td class="ok">✅</td>
+        <td class="ok">✅ 무제한<span class="conf c2">3rd</span></td>
+        <td class="ok">✅ 기본<span class="conf c2">3rd</span></td>
+        <td class="warn">Zoho Sign 별도 필요<span class="conf c1">벤더</span></td>
+        <td class="ok">✅ Essentials+<span class="conf c1">벤더</span></td>
+        <td class="ok">✅ Solo+<span class="conf c2">3rd</span></td>
       </tr>
       <tr>
         <th>CRM 내장</th>
-        <td class="warn">기본 컨택 관리 (얕음)</td>
-        <td class="warn">HubSpot 연동</td>
-        <td class="ok">✅ Zoho CRM 별도 무료</td>
-        <td class="ok">✅ 프리랜서 CRM 통합</td>
-        <td class="ok">✅ 컨설팅 CRM</td>
+        <td class="warn">기본 컨택 관리<span class="conf c2">3rd</span></td>
+        <td class="warn">HubSpot 연동<span class="conf c2">3rd</span></td>
+        <td class="ok">Zoho CRM 무료 별도<span class="conf c1">벤더</span></td>
+        <td class="ok">프리랜서 CRM 통합<span class="conf c1">벤더</span></td>
+        <td class="ok">회계·프로포절 CRM<span class="conf c2">3rd</span></td>
       </tr>
       <tr>
         <th>결제/인보이스</th>
-        <td class="ok">Stripe/PayPal</td>
-        <td class="ok">Stripe/PayPal</td>
-        <td class="ok">Books 통합</td>
-        <td class="ok">기본</td>
-        <td class="ok">자동 리커링</td>
+        <td class="ok">Stripe/PayPal<span class="conf c2">3rd</span></td>
+        <td class="ok">Stripe/PayPal<span class="conf c2">3rd</span></td>
+        <td class="ok">Books 통합<span class="conf c1">벤더</span></td>
+        <td class="ok">기본<span class="conf c1">벤더</span></td>
+        <td class="ok">자동 리커링·결제 처리 자체<span class="conf c2">3rd</span></td>
       </tr>
       <tr>
         <th>무료 트라이얼</th>
-        <td class="ok">14일</td>
-        <td class="ok">14일 (카드 X)</td>
-        <td class="ok">14일 · Invoice 영구 무료</td>
-        <td class="ok">7일</td>
-        <td class="warn">데모 요청</td>
+        <td class="ok">14일<span class="conf c2">3rd</span></td>
+        <td class="ok">14일 (카드 X)<span class="conf c2">3rd</span></td>
+        <td class="ok">14일 · Invoice 영구 무료<span class="conf c1">벤더</span></td>
+        <td class="ok">7일<span class="conf c2">3rd</span></td>
+        <td class="ok">14일<span class="conf c1">벤더</span></td>
       </tr>
       <tr>
         <th>취소수수료 자동화</th>
@@ -273,39 +308,47 @@
       </tr>
       <tr>
         <th>비고</th>
-        <td>카탈로그+변수 강력 · 첨부·엔터프라이즈 add-on 유의</td>
-        <td>템플릿 미학 최상 (언니 취향 매치) · 문서 수 제한 뼈아픔</td>
-        <td>한글 UI 최신 · Zoho 전체 조합 시 강력</td>
-        <td>프리랜서 올인원 · 100건 이상엔 아쉬움</td>
-        <td>컨설팅 리테이너 중심 · 이벤트성 견적엔 무거움</td>
+        <td>Variables + CSV catalog import 강력. 벤더 pricing page 403 로 요금은 3rd party 요약</td>
+        <td>템플릿 미학 최상 · <b>50건/월 제한 · Starter seats 정책 미확인</b></td>
+        <td>비용 최소, CSV 강력. 한국어 UI 확인 필수 · e-Sign 별도</td>
+        <td>Essentials 가격은 매력적이나 CSV import 하려면 Elite $147/mo — <b>예산 초과로 사실상 탈락</b></td>
+        <td>Core $99 예산 근접 · 이벤트성 반복 견적엔 오버스펙</td>
       </tr>
     </tbody>
   </table>
 
   <p style="font-size:12px;color:var(--muted);margin-top:14px">
     ※ 취소수수료 4-tier 는 어느 툴에서도 기본 자동화 안 됨 → Zapier/Make 등 워크플로 자동화로 우회 or 수동 처리.<br/>
-    ※ 세금계산서 발행은 어차피 홈택스 직접 진행이라 툴 내부 세금계산서 발행 여부는 요구사항 미포함.
+    ※ 세금계산서 발행은 어차피 홈택스 직접 진행이라 툴 내부 세금계산서 발행 여부는 요구사항 미포함.<br/>
+    ※ <b>PandaDoc catalog CSV import 스펙</b>: Name/SKU/Type/Category/Price/Cost/Currency/Description/Images/Billing_frequency 컬럼, 최대 10만개, 30MB, UTF-8.
   </p>
 </section>
 
 <!-- ─────────────────────────── SECTION 3 ─────────────────────────── -->
 <section>
-  <h2>3 · 추천 및 근거</h2>
+  <h2>3 · 추천 및 근거 (v2 재조정)</h2>
 
   <div class="verdict">
     <div class="vlabel">Recommendation</div>
-    <h3>1순위 검증 · <strong>PandaDoc</strong> · $38/mo (2 seats, 연납)</h3>
+
+    <h3>1순위 검증 · <strong>Zoho Invoice (무료) → 필요 시 Books $20/mo</strong></h3>
     <p>
-      실제 견적서의 <b>다중 요율 프리셋 (통역 A~E · 번역 a~d)</b> 을 Variables 로 재현 가능하고, 제품 카탈로그 CSV import 가 공식 지원되어 <b>800+건 Workpad 이관</b> 이 가장 매끄럽습니다. 예산 상한 ₩100K 안에 여유가 남아 트라이얼 후 다른 툴로 이동해도 sunk cost 가 작습니다.
+      실사용 100건 이하·2 seat 요구사항에 <b>영구 무료 티어가 정확히 맞습니다</b> (2인·500건/년). 다중 통화·CSV import·CRM 확장까지 벤더 공식으로 확인. 유일한 미확인은 <b>한국어 UI 지원</b> — Zoho 는 20+개 언어를 하지만 Korean 명시 문서가 안 잡힘. 트라이얼 개설 시 언어 셀렉터에 "한국어" 있는지 즉시 확인 필요.
     </p>
-    <h3 style="margin-top:22px">2순위 검증 · <strong>Better Proposals Premium</strong> · $58/mo (2 seats)</h3>
+
+    <h3 style="margin-top:22px">2순위 검증 · <strong>PandaDoc Essentials $38/mo (연납)</strong></h3>
     <p>
-      템플릿 <b>미학</b> 이 가장 좋아 언니가 원하는 "심플·세련" 톤에 부합. 단, 카탈로그 CSV import 부재 · Starter 5건/월 제한 때문에 Premium 필요. 문서 수 100건 근접 시 Enterprise ($98/mo) 로 밀림 → 예산 한계.
+      Zoho 가 한국어 UI 미지원으로 판명될 경우 대체. Variables + <b>10만개 catalog CSV import 공식 지원</b> — Workpad 5년치 이관에 가장 안전. 예산 상한 안에 여유가 남아 트라이얼 후 다른 툴로 이동해도 sunk cost 작음.
     </p>
-    <h3 style="margin-top:22px">보조 · <strong>Zoho Invoice (무료)</strong> · 병행 사용 가능</h3>
+
+    <h3 style="margin-top:22px">3순위 · <strong>Better Proposals Premium $29/mo</strong></h3>
     <p>
-      Books 는 <b>2026-06 부터 한국어 UI 지원 시작</b> — 완전 국내 대응. 무료 티어로 시작해 필요 시 Books 로 확장 가능. clobe.ai 는 하나은행 회계 자동화, Zoho 는 견적/CRM 담당으로 역할 분리해도 무리 없음.
+      템플릿 미학은 최고이나 <b>월 50건 제한 · CSV import 부재</b> 가 뼈아픔. Starter/Premium 이 <b>몇 seat 포함인지 벤더 공식 확인 못 함</b> — 트라이얼 개설 시 seats 정책 반드시 확인. 이관 대신 <b>새 견적부터만 사용</b> 하는 시나리오면 매력적.
     </p>
+
+    <div class="caveat">
+      ⚠️ Bonsai 는 예산 초과 (CSV import 필요 시 $147/mo)로 사실상 탈락 · Ignition 은 Core $99/mo 로 예산 근접하나 이벤트성 견적에 오버스펙
+    </div>
   </div>
 </section>
 
@@ -314,58 +357,52 @@
   <h2>4 · 다음 스텝 (2주 스프린트)</h2>
 
   <div class="steps">
-    <div><span class="num">01</span><span class="task">PandaDoc 14일 트라이얼 개설 · Korea Risk Group 견적 재현 시도 (스크린샷 캡처)</span><span class="who">서현</span></div>
-    <div><span class="num">02</span><span class="task">Better Proposals 14일 트라이얼 개설 · 동일 견적 재현 · 템플릿 미학 비교</span><span class="who">서현</span></div>
-    <div><span class="num">03</span><span class="task">Zoho Invoice 무료 계정 개설 · 한글 UI 실측 · 세 툴 캡처 비교표 완성</span><span class="who">서현</span></div>
-    <div><span class="num">04</span><span class="task">Workpad 2020~2025 통합 CSV 로 정규화 (컬럼 매핑 · 클라이언트 dedupe)</span><span class="who">서현</span></div>
-    <div><span class="num">05</span><span class="task">한 툴 최종 선택 · 요율표 A~E, a~d, I~III 프리셋 세팅</span><span class="who">언니+서현</span></div>
+    <div><span class="num">01</span><span class="task">Zoho Invoice 무료 계정 개설 · <b>한국어 UI 지원 여부 즉시 확인</b> · Korea Risk Group 견적 재현</span><span class="who">서현</span></div>
+    <div><span class="num">02</span><span class="task">PandaDoc 14일 트라이얼 개설 · 동일 견적 재현 · Variables 로 요율 프리셋 세팅 시도</span><span class="who">서현</span></div>
+    <div><span class="num">03</span><span class="task">Better Proposals 14일 트라이얼 개설 · seats 정책 확인 · 템플릿 미학 언니 취향 검토</span><span class="who">서현+언니</span></div>
+    <div><span class="num">04</span><span class="task">Workpad 2020~2025 통합 CSV 로 정규화 (컬럼 매핑 · 클라이언트 dedupe · 800+건)</span><span class="who">서현</span></div>
+    <div><span class="num">05</span><span class="task">3개 툴 실측 캡처+장단점 비교표 → 언니에게 브리핑, 최종 선택</span><span class="who">서현</span></div>
     <div><span class="num">06</span><span class="task">기존 견적 서식 3~5종 템플릿화 (동시통역 · 웨비나 · 번역 · 강의 · 프로젝트)</span><span class="who">언니</span></div>
-    <div><span class="num">07</span><span class="task">계약서/NDA 표준안 업로드 · e-Signature 흐름 설정</span><span class="who">언니</span></div>
-    <div><span class="num">08</span><span class="task">clobe.ai 병행 프로세스 정의 (누가 언제 계산서 홈택스 발행)</span><span class="who">언니</span></div>
+    <div><span class="num">07</span><span class="task">계약서/NDA 표준안 업로드 · e-Signature 흐름 설정 (선택 툴 기능에 따라)</span><span class="who">언니</span></div>
+    <div><span class="num">08</span><span class="task">clobe.ai 병행 프로세스 정의 (누가 언제 홈택스 세금계산서 발행)</span><span class="who">언니</span></div>
   </div>
 
   <p style="font-size:13px;color:var(--muted);margin-top:18px">
-    스텝 1~3 은 병렬로 진행 가능 (2~3일). 4는 데이터 정규화라 별도 세션 필요. 5부터는 툴 선택 후 순차. <b>9월 초 목표</b>.
+    스텝 1~3 은 병렬 가능 (2~3일). 4는 데이터 정규화라 별도 세션 필요. 5부터는 툴 선택 후 순차. <b>9월 초 목표</b>.
   </p>
 </section>
 
 <!-- ─────────────────────────── SECTION 5 ─────────────────────────── -->
 <section>
-  <h2>5 · 참고 자료</h2>
+  <h2>5 · 참고 자료 (신뢰도별)</h2>
 
   <div class="sources">
+    <h4>벤더 공식 (Tier 1 신뢰도)</h4>
     <ul>
-      <li>
-        <b>PandaDoc Pricing 2026 — Plans & Add-ons</b>
-        <a href="https://axisconsulting.io/pandadoc-pricing-guide/">axisconsulting.io</a> ·
-        <a href="https://costbench.com/software/contract-management/pandadoc/">costbench.com</a>
-      </li>
-      <li>
-        <b>PandaDoc Features — Pricing Tables · Variables · CSV Import</b>
-        <a href="https://support.pandadoc.com/en/articles/9714700-import-and-export-your-catalog-via-csv">Catalog CSV import</a> ·
-        <a href="https://support.pandadoc.com/en/articles/9714599-variables">Variables</a> ·
-        <a href="https://www.pandadoc.com/features/quote/pricing-table/">Pricing Tables</a>
-      </li>
-      <li>
-        <b>Better Proposals Pricing & Alternatives</b>
-        <a href="https://www.getapp.com/sales-software/a/better-proposals/">getapp.com</a> ·
-        <a href="https://checkthat.ai/brands/better-proposals/pricing">checkthat.ai</a> ·
-        <a href="https://www.proposify.com/blog/better-proposals-pricing">proposify.com</a>
-      </li>
-      <li>
-        <b>Better Proposals CSV / Integration Limitations</b>
-        <a href="https://www.pandadoc.com/alternatives/better-proposals/">pandadoc.com vs Better Proposals</a> ·
-        <a href="https://zapier.com/apps/better-proposals/integrations">Zapier integrations</a>
-      </li>
-      <li>
-        <b>Zoho Books 한국어 UI 지원 (2026-06 업데이트)</b>
-        <a href="https://help.zoho.com/portal/en/community/topic/zoho-books-product-updates-june-2026-7-6-2026">Zoho Books June 2026 updates</a>
-      </li>
-      <li>
-        <b>Zoho Books / Invoice Pricing</b>
-        <a href="https://www.getapp.com/finance-accounting-software/a/zoho-books/">getapp.com</a> ·
-        <a href="https://www.g2.com/products/zoho-books/pricing">g2.com</a>
-      </li>
+      <li><b>PandaDoc — Import products via CSV</b> <a href="https://support.pandadoc.com/en/articles/9714700-import-and-export-your-catalog-via-csv">support.pandadoc.com</a></li>
+      <li><b>PandaDoc — Variables</b> <a href="https://support.pandadoc.com/en/articles/9714599-variables">support.pandadoc.com</a></li>
+      <li><b>PandaDoc — Pricing Tables Feature</b> <a href="https://www.pandadoc.com/features/quote/pricing-table/">pandadoc.com</a></li>
+      <li><b>Bonsai — Pricing (Basic/Essentials/Premium/Elite)</b> <a href="https://www.hellobonsai.com/pricing">hellobonsai.com</a></li>
+      <li><b>Zoho Invoice — Pricing (Free plan, 2 users, 500 invoices/year)</b> <a href="https://www.zoho.com/invoice/pricing.html">zoho.com/invoice</a></li>
+      <li><b>Zoho Books — Multilingual announcement (Korean 미확인)</b> <a href="https://www.zoho.com/blog/books/zoho-books-is-now-multilingual.html">zoho.com/blog</a></li>
+      <li><b>Ignition — Pricing page (금액 미노출)</b> <a href="https://www.ignitionapp.com/pricing">ignitionapp.com</a></li>
+    </ul>
+
+    <h4>3rd party 요약 (Tier 2 신뢰도)</h4>
+    <ul>
+      <li><b>PandaDoc Pricing 2026</b> <a href="https://www.vendr.com/marketplace/pandadoc">vendr.com</a> · <a href="https://axisconsulting.io/pandadoc-pricing-guide/">axisconsulting.io</a> · <a href="https://costbench.com/software/contract-management/pandadoc/">costbench.com</a></li>
+      <li><b>Better Proposals Pricing</b> <a href="https://www.capterra.com/p/153794/Better-Proposals/pricing/">Capterra</a> · <a href="https://www.getapp.com/sales-software/a/better-proposals/">GetApp</a> · <a href="https://checkthat.ai/brands/better-proposals/pricing">checkthat.ai</a></li>
+      <li><b>Ignition Pricing 2026 (Solo/Core/Pro/Pro+)</b> <a href="https://scribehow.com/page/Ignition_App_Review_2026_Real_Costs_for_Accounting_Firms__E2ERxPk-RTeafizmdee_3A">scribehow.com</a> · <a href="https://www.saasworthy.com/product/ignition-app/pricing">saasworthy.com</a></li>
+      <li><b>Zoho Books Language Support (Korean 미언급)</b> <a href="https://help.zoho.com/portal/en-gb/community/topic/accounting-on-the-go-series-23-unlocking-multilingual-support-language-localization-in-zoho-books">Zoho Community</a></li>
+    </ul>
+
+    <h4>미확인 · 트라이얼 실측 필요 항목</h4>
+    <ul>
+      <li>Zoho Books/Invoice 한국어 UI 실 지원 여부</li>
+      <li>모든 툴의 한글 폰트 렌더링 품질 (Pretendard/Noto Sans KR 임베드)</li>
+      <li>PandaDoc pricing table footer 에서 커스텀 수식 (천단위 절사) 가능 여부</li>
+      <li>Better Proposals Starter/Premium 요금이 flat vs per-user</li>
+      <li>Ignition Core 플랜 (2인) 실 요금</li>
     </ul>
   </div>
 </section>
@@ -373,7 +410,7 @@
 </main>
 
 <footer>
-  <div>Beehive Corp · Quote+CRM Research · 2026-08-13 · 준비 김서현</div>
+  <div>Beehive Corp · Quote+CRM Research v2 · 2026-08-13 · 준비 김서현 · <a href="https://github.com/soyhoney/beehive-notes">github.com/soyhoney/beehive-notes</a></div>
 </footer>
 
 </body>
